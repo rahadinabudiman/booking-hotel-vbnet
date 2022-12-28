@@ -26,7 +26,6 @@ Public Class CheckIn
         Call DisabledAll()
         TextBox1.Text = ""
         TextBox2.Text = ""
-        TextBox3.Text = ""
         TextBox5.Text = ""
         TextBox6.Text = ""
         TextBox7.Text = ""
@@ -34,6 +33,7 @@ Public Class CheckIn
         ComboBox1.Text = ""
         ComboBox2.Text = ""
         ComboBox3.Text = ""
+        Button1.Enabled = True
         Button2.Enabled = True
         Button4.Enabled = True
         Button3.Text = "Close"
@@ -83,6 +83,9 @@ Public Class CheckIn
         Call NamaTamu()
         Call KategoriKamar()
         TextBox3.Text = 150000
+        Label15.Visible = False
+        Label16.Visible = False
+        Label17.Visible = False
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -162,5 +165,99 @@ Public Class CheckIn
         TotalBayar = Val(TextBox6.Text)
         Kembalian = TotalBayar - Val(TextBox5.Text)
         TextBox7.Text = Kembalian
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox5.Text = "" Or ComboBox1.Text = "" Or ComboBox2.Text = "" Or ComboBox3.Text = "" Then
+            MsgBox("Data tidak boleh kosong")
+        Else
+            Call Koneksi()
+            Dim HapusData, CheckData, GantiStatusKamar, GantiStatusTamu As String
+            Dim id_tamu, id_kamar, status_kamar, status_tamu, id_pesan_kamar As Integer
+            status_kamar = 0
+            status_tamu = 0
+            id_pesan_kamar = Label15.Text
+            id_tamu = Label16.Text
+            id_kamar = Label17.Text
+            GantiStatusKamar = "UPDATE kamar SET status='" & status_kamar & "' WHERE id_kamar='" & id_kamar & "'"
+            GantiStatusTamu = "UPDATE tamu SET status='" & status_tamu & "' WHERE id_tamu='" & id_tamu & "'"
+            HapusData = "DELETE FROM pesan_kamar WHERE id_pesan_kamar = '" & id_pesan_kamar & "'"
+            CMD = New OdbcCommand(GantiStatusKamar, Conn)
+            CMD.ExecuteNonQuery()
+            CMD = New OdbcCommand(GantiStatusTamu, Conn)
+            CMD.ExecuteNonQuery()
+            CMD = New OdbcCommand(HapusData, Conn)
+            CMD.ExecuteNonQuery()
+            MsgBox("Berhasil Hapus Data")
+            Call KondisiAwal()
+        End If
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Call Koneksi()
+        Call KategoriKamar()
+        Call NomorKamar()
+        Dim id_tamu As Integer
+        ComboBox1.Enabled = False
+        TextBox1.Enabled = True
+        TextBox2.Enabled = True
+        TextBox3.Enabled = True
+        TextBox5.Enabled = True
+        TextBox6.Enabled = True
+        TextBox7.Enabled = True
+        ComboBox2.Enabled = True
+        ComboBox3.Enabled = True
+        id_tamu = DataGridView1.CurrentRow.Cells(2).Value
+        CMD = New OdbcCommand("SELECT nama_depan_tamu FROM tamu WHERE id_tamu='" & id_tamu & "'", Conn)
+        Da = New OdbcDataAdapter(CMD)
+        Dt = New DataTable
+        Da.Fill(Dt)
+        If Dt.Rows.Count > 0 Then
+            ComboBox1.DataSource = Dt
+            ComboBox1.DisplayMember = "nama_depan_tamu"
+            ComboBox1.ValueMember = "id_Tamu"
+        End If
+        TextBox1.Text = DataGridView1.CurrentRow.Cells(3).Value
+        ComboBox2.Text = DataGridView1.CurrentRow.Cells(5).Value
+        TextBox2.Text = DataGridView1.CurrentRow.Cells(9).Value
+        Label15.Text = DataGridView1.CurrentRow.Cells(0).Value
+        Label16.Text = DataGridView1.CurrentRow.Cells(2).Value
+        Label17.Text = DataGridView1.CurrentRow.Cells(4).Value
+        Button1.Enabled = False
+        Button3.Text = "Batal"
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox5.Text = "" Or ComboBox1.Text = "" Or ComboBox2.Text = "" Or ComboBox3.Text = "" Then
+            MsgBox("Data tidak boleh kosong")
+        Else
+            Call Koneksi()
+            Dim EditData, EditStatusKamar, EditKamarTerpakai As String
+            Dim status_kamar, status_tamu, id_pesan_kamar, id_kamar, kamar_tidak_terpakai, kamar_terpakai As Integer
+            status_kamar = 0
+            status_tamu = 0
+            kamar_tidak_terpakai = 0
+            kamar_terpakai = 1
+            id_pesan_kamar = Label15.Text
+            If ComboBox3.Text = "Pilih Nomor Kamar" Then
+                id_kamar = Label17.Text
+            Else
+                id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
+                EditKamarTerpakai = "UPDATE kamar SET status = '" & kamar_terpakai & "' WHERE id_kamar ='" & id_kamar & "'"
+                CMD = New OdbcCommand(EditKamarTerpakai, Conn)
+                CMD.ExecuteNonQuery()
+            End If
+
+            Dim TglSaya As String
+            TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
+            EditData = "UPDATE pesan_kamar SET jumlah_tamu = '" & TextBox1.Text & "', tipe_kamar ='" & ComboBox2.Text & "', id_kamar ='" & id_kamar & "', lama_pesan ='" & TextBox2.Text & "' , tanggal_masuk ='" & TglSaya & "' , jam_masuk ='" & Now.ToLongTimeString & "' WHERE id_pesan_kamar = '" & id_pesan_kamar & "'"
+            EditStatusKamar = "UPDATE kamar SET status ='" & kamar_tidak_terpakai & "' WHERE id_kamar = '" & Label17.Text & "'"
+            CMD = New OdbcCommand(EditStatusKamar, Conn)
+            CMD.ExecuteNonQuery()
+            CMD = New OdbcCommand(EditData, Conn)
+            CMD.ExecuteNonQuery()
+            MsgBox("Berhasil Edit Data")
+            Call KondisiAwal()
+        End If
     End Sub
 End Class
