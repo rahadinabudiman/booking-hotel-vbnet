@@ -103,6 +103,12 @@
     <Compile Include="CheckIn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CheckOut.Designer.vb">
+      <DependentUpon>CheckOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Kamar.Designer.vb">
       <DependentUpon>Kamar.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckOut.resx">
+      <DependentUpon>CheckOut.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kamar.resx">
       <DependentUpon>Kamar.vb</DependentUpon>
