@@ -32,4 +32,9 @@
         Me.Hide()
         CheckIn.Show()
     End Sub
+
+    Private Sub CheckOutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckOutToolStripMenuItem.Click
+        Me.Hide()
+        CheckOut.Show()
+    End Sub
 End Class
