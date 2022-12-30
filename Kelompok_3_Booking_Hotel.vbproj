@@ -109,6 +109,12 @@
     <Compile Include="CheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Food.Designer.vb">
+      <DependentUpon>Food.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Food.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Kamar.Designer.vb">
       <DependentUpon>Kamar.vb</DependentUpon>
     </Compile>
@@ -122,6 +128,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Koneksi_Hotel.vb" />
+    <Compile Include="Layanan.Designer.vb">
+      <DependentUpon>Layanan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Layanan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -175,11 +187,17 @@
     <EmbeddedResource Include="CheckOut.resx">
       <DependentUpon>CheckOut.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Food.resx">
+      <DependentUpon>Food.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kamar.resx">
       <DependentUpon>Kamar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kategori_Kamar.resx">
       <DependentUpon>Kategori_Kamar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layanan.resx">
+      <DependentUpon>Layanan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
