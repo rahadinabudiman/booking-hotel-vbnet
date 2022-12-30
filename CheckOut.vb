@@ -47,6 +47,7 @@ Public Class CheckOut
         Ds = New DataSet
         Da.Fill(Ds, "pesan_kamar")
         DataGridView1.DataSource = Ds.Tables("pesan_kamar")
+        DataGridView2.Visible = False
     End Sub
     Sub NamaTamu()
         Call Koneksi()
@@ -67,12 +68,29 @@ Public Class CheckOut
         Label19.Visible = False
         Label20.Visible = False
     End Sub
+    Sub TotalPesanan()
+        Dim id_tamu, totalharga As Integer
+        Call Koneksi()
+        id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
+        Da = New OdbcDataAdapter("SELECT total_harga FROM pesanan WHERE status_pesanan = 0 AND id_tamu ='" & id_tamu & "'", Conn)
+        Ds = New DataSet
+        Da.Fill(Ds, "pesanan")
+        DataGridView2.DataSource = Ds.Tables("pesanan")
+
+        totalharga = 0
+
+        For i As Integer = 0 To DataGridView2.RowCount - 1
+            totalharga += DataGridView2.Rows(i).Cells(0).Value
+        Next
+        Label22.Text = totalharga
+    End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Call TotalPesanan()
         Dim id_tamu As Integer
         Dim Panggil_Pesan_Kamar As String
+        Call Koneksi()
         id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
         Panggil_Pesan_Kamar = "SELECT id_pesan_kamar FROM pesan_kamar WHERE id_tamu ='" & id_tamu & "'"
-        Call Koneksi()
         CMD = New OdbcCommand("SELECT ps.id_pesan_kamar, ps.harga_awal, ps.tipe_kamar, t.id_tamu, t.nama_depan_tamu, k.id_kamar, k.nomor_kamar, ps.id_kamar, ps.id_tamu FROM pesan_kamar as ps INNER JOIN tamu as t ON ps.id_tamu=t.id_tamu INNER JOIN kamar as k ON ps.id_kamar=k.id_kamar WHERE status_pesan=0 AND ps.id_tamu='" & id_tamu & "'", Conn)
         Rd = CMD.ExecuteReader
         Rd.Read()

@@ -46,4 +46,14 @@
         Me.Hide()
         TamuInHouse.Show()
     End Sub
+
+    Private Sub LayananToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LayananToolStripMenuItem.Click
+        Me.Hide()
+        Layanan.Show()
+    End Sub
+
+    Private Sub FoodToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FoodToolStripMenuItem.Click
+        Me.Hide()
+        Food.Show()
+    End Sub
 End Class

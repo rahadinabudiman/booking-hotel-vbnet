@@ -34,3 +34,5 @@ D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CheckOut.resources
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.PembersihanKamar.resources
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TamuInHouse.resources
+C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Layanan.resources
+C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Food.resources
