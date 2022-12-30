@@ -14,3 +14,22 @@ C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Kategori_Kamar.resources
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Kamar.resources
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CheckIn.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.exe.config
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.exe
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.xml
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.pdb
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.exe
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.pdb
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.xml
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.vbprojResolveAssemblyReference.cache
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CheckIn.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CheckOut.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Kamar.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Kategori_Kamar.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Login.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.MenuUtama.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Resources.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Tamu.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.vbproj.GenerateResource.Cache
+C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CheckOut.resources
+C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.PembersihanKamar.resources

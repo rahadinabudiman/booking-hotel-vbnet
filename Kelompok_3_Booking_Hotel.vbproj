@@ -149,6 +149,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PembersihanKamar.Designer.vb">
+      <DependentUpon>PembersihanKamar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PembersihanKamar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tamu.Designer.vb">
       <DependentUpon>Tamu.vb</DependentUpon>
     </Compile>
@@ -180,6 +186,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PembersihanKamar.resx">
+      <DependentUpon>PembersihanKamar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tamu.resx">
       <DependentUpon>Tamu.vb</DependentUpon>

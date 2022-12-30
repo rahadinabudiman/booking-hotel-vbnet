@@ -37,4 +37,9 @@
         Me.Hide()
         CheckOut.Show()
     End Sub
+
+    Private Sub PembersihanKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PembersihanKamarToolStripMenuItem.Click
+        Me.Hide()
+        PembersihanKamar.Show()
+    End Sub
 End Class

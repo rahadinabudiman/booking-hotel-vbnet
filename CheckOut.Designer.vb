@@ -32,9 +32,26 @@ Partial Class CheckOut
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -103,7 +120,7 @@ Partial Class CheckOut
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(20, 155)
+        Me.Label8.Location = New System.Drawing.Point(20, 149)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(39, 13)
         Me.Label8.TabIndex = 7
@@ -114,11 +131,12 @@ Partial Class CheckOut
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(92, 34)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(97, 21)
         Me.ComboBox1.TabIndex = 8
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(32, 12)
@@ -128,8 +146,27 @@ Partial Class CheckOut
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Tamu"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(195, 34)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(44, 23)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Cari"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label17)
+        Me.GroupBox2.Controls.Add(Me.Label16)
+        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox2.Controls.Add(Me.Label15)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label8)
@@ -137,18 +174,153 @@ Partial Class CheckOut
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Location = New System.Drawing.Point(35, 102)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 102)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(253, 276)
+        Me.GroupBox2.Size = New System.Drawing.Size(341, 197)
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Data Pesanan"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(96, 181)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(13, 13)
+        Me.Label17.TabIndex = 17
+        Me.Label17.Text = "0"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(20, 181)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(63, 13)
+        Me.Label16.TabIndex = 16
+        Me.Label16.Text = "Harga Akhir"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(163, 149)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(163, 20)
+        Me.DateTimePicker1.TabIndex = 15
+        Me.DateTimePicker1.Value = New Date(2022, 12, 29, 14, 22, 52, 0)
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(88, 149)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(13, 13)
+        Me.Label15.TabIndex = 14
+        Me.Label15.Text = "0"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(253, 110)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(45, 13)
+        Me.Label14.TabIndex = 13
+        Me.Label14.Text = "Label14"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(96, 110)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(45, 13)
+        Me.Label13.TabIndex = 12
+        Me.Label13.Text = "Label13"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(253, 77)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(45, 13)
+        Me.Label12.TabIndex = 11
+        Me.Label12.Text = "Label12"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(107, 68)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(45, 13)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "Label11"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(253, 30)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(45, 13)
+        Me.Label10.TabIndex = 9
+        Me.Label10.Text = "Label10"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(96, 30)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(39, 13)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "Label9"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(59, 316)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "Simpan"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(23, 360)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(329, 116)
+        Me.DataGridView1.TabIndex = 12
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(307, 49)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(0, 13)
+        Me.Label18.TabIndex = 13
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(308, 25)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(0, 13)
+        Me.Label19.TabIndex = 14
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(308, 77)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(0, 13)
+        Me.Label20.TabIndex = 15
         '
         'CheckOut
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(365, 486)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "CheckOut"
@@ -157,7 +329,9 @@ Partial Class CheckOut
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -171,4 +345,20 @@ Partial Class CheckOut
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
 End Class
