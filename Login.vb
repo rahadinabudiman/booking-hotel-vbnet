@@ -10,6 +10,7 @@ Public Class Login
             If Rd.HasRows Then
                 MenuUtama.Show()
                 Me.Hide()
+                MenuUtama.Label2.Text = Rd.Item("nama_admin")
             Else
                 MsgBox("Username atau Password Salah")
                 TextBox1.Clear()

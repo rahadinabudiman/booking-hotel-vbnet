@@ -1,5 +1,46 @@
 ﻿Imports System.Data.Odbc
 Public Class CheckIn
+    Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
+        MsgBox("Logout Berhasil")
+        Me.Hide()
+        Login.Show()
+        Login.TextBox1.Text = ""
+        Login.TextBox2.Text = ""
+    End Sub
+
+    Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeluarToolStripMenuItem.Click
+        Me.Close()
+        Login.Close()
+    End Sub
+
+    Private Sub BukuTamuToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BukuTamuToolStripMenuItem.Click
+        Tamu.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KategoriKamarToolStripMenuItem.Click
+        Me.Hide()
+        Kategori_Kamar.Show()
+    End Sub
+
+    Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KamarToolStripMenuItem.Click
+        Me.Hide()
+        Kamar.Show()
+    End Sub
+    Private Sub CheckOutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckOutToolStripMenuItem.Click
+        Me.Hide()
+        CheckOut.Show()
+    End Sub
+
+    Private Sub PembersihanKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PembersihanKamarToolStripMenuItem.Click
+        Me.Hide()
+        PembersihanKamar.Show()
+    End Sub
+
+    Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
+        Me.Hide()
+        TamuInHouse.Show()
+    End Sub
     Sub DisabledAll()
         TextBox1.Enabled = False
         TextBox2.Enabled = False
@@ -38,7 +79,7 @@ Public Class CheckIn
         Button4.Enabled = True
         Button3.Text = "Close"
         Call Koneksi()
-        Da = New OdbcDataAdapter("SELECT * FROM pesan_kamar", Conn)
+        Da = New OdbcDataAdapter("SELECT * FROM pesan_kamar WHERE status_pesan = 0", Conn)
         Ds = New DataSet
         Da.Fill(Ds, "pesan_kamar")
         DataGridView1.DataSource = Ds.Tables("pesan_kamar")
@@ -259,5 +300,9 @@ Public Class CheckIn
             MsgBox("Berhasil Edit Data")
             Call KondisiAwal()
         End If
+    End Sub
+
+    Private Sub CheckInToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckInToolStripMenuItem.Click
+        MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
 End Class

@@ -55,11 +55,35 @@ Partial Class Tamu
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrasiHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LayananToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KategoriKamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RoomServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FoodToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DrinkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaundryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.PembersihanKamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProsesHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckInToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TamuInHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BukuTamuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -107,7 +131,7 @@ Partial Class Tamu
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 13)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 36)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(311, 204)
         Me.GroupBox1.TabIndex = 14
@@ -283,7 +307,7 @@ Partial Class Tamu
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Location = New System.Drawing.Point(336, 66)
+        Me.GroupBox2.Location = New System.Drawing.Point(329, 89)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(157, 151)
         Me.GroupBox2.TabIndex = 24
@@ -317,7 +341,7 @@ Partial Class Tamu
         Me.GroupBox3.Controls.Add(Me.Button2)
         Me.GroupBox3.Controls.Add(Me.Button3)
         Me.GroupBox3.Controls.Add(Me.Button1)
-        Me.GroupBox3.Location = New System.Drawing.Point(19, 223)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 246)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(474, 50)
         Me.GroupBox3.TabIndex = 25
@@ -337,7 +361,7 @@ Partial Class Tamu
         '
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(23, 283)
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 306)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(470, 145)
         Me.DataGridView1.TabIndex = 26
@@ -346,7 +370,7 @@ Partial Class Tamu
         '
         Me.GroupBox4.Controls.Add(Me.Button5)
         Me.GroupBox4.Controls.Add(Me.TextBox9)
-        Me.GroupBox4.Location = New System.Drawing.Point(336, 13)
+        Me.GroupBox4.Location = New System.Drawing.Point(329, 36)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(156, 47)
         Me.GroupBox4.TabIndex = 27
@@ -369,11 +393,153 @@ Partial Class Tamu
         Me.TextBox9.Size = New System.Drawing.Size(100, 20)
         Me.TextBox9.TabIndex = 0
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AdministrasiHotelToolStripMenuItem, Me.RoomServicesToolStripMenuItem, Me.ProsesHotelToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(512, 24)
+        Me.MenuStrip1.TabIndex = 28
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoutToolStripMenuItem, Me.ToolStripSeparator1, Me.KeluarToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(109, 6)
+        '
+        'KeluarToolStripMenuItem
+        '
+        Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.KeluarToolStripMenuItem.Text = "Keluar"
+        '
+        'AdministrasiHotelToolStripMenuItem
+        '
+        Me.AdministrasiHotelToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KamarToolStripMenuItem, Me.LayananToolStripMenuItem, Me.ToolStripSeparator2, Me.LaporanToolStripMenuItem, Me.KategoriKamarToolStripMenuItem})
+        Me.AdministrasiHotelToolStripMenuItem.Name = "AdministrasiHotelToolStripMenuItem"
+        Me.AdministrasiHotelToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
+        Me.AdministrasiHotelToolStripMenuItem.Text = "Administrasi Hotel"
+        '
+        'KamarToolStripMenuItem
+        '
+        Me.KamarToolStripMenuItem.Name = "KamarToolStripMenuItem"
+        Me.KamarToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.KamarToolStripMenuItem.Text = "Kamar"
+        '
+        'LayananToolStripMenuItem
+        '
+        Me.LayananToolStripMenuItem.Name = "LayananToolStripMenuItem"
+        Me.LayananToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.LayananToolStripMenuItem.Text = "Layanan"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(152, 6)
+        '
+        'LaporanToolStripMenuItem
+        '
+        Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
+        Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.LaporanToolStripMenuItem.Text = "Laporan"
+        '
+        'KategoriKamarToolStripMenuItem
+        '
+        Me.KategoriKamarToolStripMenuItem.Name = "KategoriKamarToolStripMenuItem"
+        Me.KategoriKamarToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.KategoriKamarToolStripMenuItem.Text = "Kategori Kamar"
+        '
+        'RoomServicesToolStripMenuItem
+        '
+        Me.RoomServicesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FoodToolStripMenuItem, Me.DrinkToolStripMenuItem, Me.LaundryToolStripMenuItem, Me.ToolStripSeparator3, Me.PembersihanKamarToolStripMenuItem})
+        Me.RoomServicesToolStripMenuItem.Name = "RoomServicesToolStripMenuItem"
+        Me.RoomServicesToolStripMenuItem.Size = New System.Drawing.Size(96, 20)
+        Me.RoomServicesToolStripMenuItem.Text = "Room Services"
+        '
+        'FoodToolStripMenuItem
+        '
+        Me.FoodToolStripMenuItem.Name = "FoodToolStripMenuItem"
+        Me.FoodToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FoodToolStripMenuItem.Text = "Food"
+        '
+        'DrinkToolStripMenuItem
+        '
+        Me.DrinkToolStripMenuItem.Name = "DrinkToolStripMenuItem"
+        Me.DrinkToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DrinkToolStripMenuItem.Text = "Drink"
+        '
+        'LaundryToolStripMenuItem
+        '
+        Me.LaundryToolStripMenuItem.Name = "LaundryToolStripMenuItem"
+        Me.LaundryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LaundryToolStripMenuItem.Text = "Laundry"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        '
+        'PembersihanKamarToolStripMenuItem
+        '
+        Me.PembersihanKamarToolStripMenuItem.Name = "PembersihanKamarToolStripMenuItem"
+        Me.PembersihanKamarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PembersihanKamarToolStripMenuItem.Text = "Pembersihan Kamar"
+        '
+        'ProsesHotelToolStripMenuItem
+        '
+        Me.ProsesHotelToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckInToolStripMenuItem, Me.CheckOutToolStripMenuItem, Me.TamuInHouseToolStripMenuItem, Me.ToolStripSeparator4, Me.BukuTamuToolStripMenuItem})
+        Me.ProsesHotelToolStripMenuItem.Name = "ProsesHotelToolStripMenuItem"
+        Me.ProsesHotelToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
+        Me.ProsesHotelToolStripMenuItem.Text = "Proses Hotel"
+        '
+        'CheckInToolStripMenuItem
+        '
+        Me.CheckInToolStripMenuItem.Name = "CheckInToolStripMenuItem"
+        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CheckInToolStripMenuItem.Text = "Check In"
+        '
+        'CheckOutToolStripMenuItem
+        '
+        Me.CheckOutToolStripMenuItem.Name = "CheckOutToolStripMenuItem"
+        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CheckOutToolStripMenuItem.Text = "Check Out"
+        '
+        'TamuInHouseToolStripMenuItem
+        '
+        Me.TamuInHouseToolStripMenuItem.Name = "TamuInHouseToolStripMenuItem"
+        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.TamuInHouseToolStripMenuItem.Text = "Tamu In House"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(150, 6)
+        '
+        'BukuTamuToolStripMenuItem
+        '
+        Me.BukuTamuToolStripMenuItem.Name = "BukuTamuToolStripMenuItem"
+        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.BukuTamuToolStripMenuItem.Text = "Buku Tamu"
+        '
         'Tamu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(512, 435)
+        Me.ClientSize = New System.Drawing.Size(512, 467)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox3)
@@ -389,7 +555,10 @@ Partial Class Tamu
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -425,4 +594,27 @@ Partial Class Tamu
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AdministrasiHotelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KamarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LayananToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KategoriKamarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RoomServicesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FoodToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DrinkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaundryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents PembersihanKamarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ProsesHotelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CheckInToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CheckOutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TamuInHouseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BukuTamuToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

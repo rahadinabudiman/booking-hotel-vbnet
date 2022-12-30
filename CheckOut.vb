@@ -1,5 +1,46 @@
 ﻿Imports System.Data.Odbc
 Public Class CheckOut
+    Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
+        MsgBox("Logout Berhasil")
+        Me.Hide()
+        Login.Show()
+        Login.TextBox1.Text = ""
+        Login.TextBox2.Text = ""
+    End Sub
+
+    Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeluarToolStripMenuItem.Click
+        Me.Close()
+        Login.Close()
+    End Sub
+
+    Private Sub BukuTamuToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BukuTamuToolStripMenuItem.Click
+        Tamu.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KategoriKamarToolStripMenuItem.Click
+        Me.Hide()
+        Kategori_Kamar.Show()
+    End Sub
+
+    Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KamarToolStripMenuItem.Click
+        Me.Hide()
+        Kamar.Show()
+    End Sub
+
+    Private Sub CheckInToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckInToolStripMenuItem.Click
+        Me.Hide()
+        CheckIn.Show()
+    End Sub
+    Private Sub PembersihanKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PembersihanKamarToolStripMenuItem.Click
+        Me.Hide()
+        PembersihanKamar.Show()
+    End Sub
+
+    Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
+        Me.Hide()
+        TamuInHouse.Show()
+    End Sub
     Sub KondisiAwal()
         Call Koneksi()
         Da = New OdbcDataAdapter("SELECT * FROM pesan_kamar WHERE status_pesan = 0", Conn)
@@ -32,14 +73,12 @@ Public Class CheckOut
         id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
         Panggil_Pesan_Kamar = "SELECT id_pesan_kamar FROM pesan_kamar WHERE id_tamu ='" & id_tamu & "'"
         Call Koneksi()
-        CMD = New OdbcCommand("SELECT * FROM pesan_kamar INNER JOIN tamu ON pesan_kamar.id_tamu = tamu.id_tamu WHERE pesan_kamar.id_tamu = '" & id_tamu & "'", Conn)
+        CMD = New OdbcCommand("SELECT ps.id_pesan_kamar, ps.harga_awal, ps.tipe_kamar, t.id_tamu, t.nama_depan_tamu, k.id_kamar, k.nomor_kamar, ps.id_kamar, ps.id_tamu FROM pesan_kamar as ps INNER JOIN tamu as t ON ps.id_tamu=t.id_tamu INNER JOIN kamar as k ON ps.id_kamar=k.id_kamar WHERE status_pesan=0 AND ps.id_tamu='" & id_tamu & "'", Conn)
         Rd = CMD.ExecuteReader
         Rd.Read()
-
-        Dim dtdd As DateTime
         If Rd.HasRows Then
             Label9.Text = Rd.Item("tipe_kamar")
-            Label10.Text = Rd.Item("nama_belakang_tamu")
+            Label10.Text = Rd.Item("nomor_kamar")
             Label13.Text = Rd.Item("harga_awal")
             Label18.Text = Rd.Item("id_pesan_kamar")
             Label19.Text = Rd.Item("id_kamar")
@@ -68,5 +107,9 @@ Public Class CheckOut
         CMD.ExecuteNonQuery()
         MsgBox("Berhasil input Data")
         Call KondisiAwal()
+    End Sub
+
+    Private Sub CheckOutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckOutToolStripMenuItem.Click
+        MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
 End Class
