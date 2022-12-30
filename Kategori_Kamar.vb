@@ -1,5 +1,40 @@
 ﻿Imports System.Data.Odbc
 Public Class Kategori_Kamar
+    Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        MsgBox("Logout Berhasil")
+        Me.Hide()
+        Login.Show()
+        Login.TextBox1.Text = ""
+        Login.TextBox2.Text = ""
+    End Sub
+
+    Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Close()
+        Login.Close()
+    End Sub
+
+    Private Sub BukuTamuToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Tamu.Show()
+        Me.Hide()
+    End Sub
+    Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Hide()
+        Kamar.Show()
+    End Sub
+
+    Private Sub CheckInToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Hide()
+        CheckIn.Show()
+    End Sub
+
+    Private Sub CheckOutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Hide()
+        CheckOut.Show()
+    End Sub
+    Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
+        Me.Hide()
+        TamuInHouse.Show()
+    End Sub
     Sub KondisiAwal()
         TextBox1.Enabled = False
         TextBox2.Enabled = False
@@ -93,5 +128,9 @@ Public Class Kategori_Kamar
             MsgBox("Berhasil Hapus Data")
             Call KondisiAwal()
         End If
+    End Sub
+
+    Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KategoriKamarToolStripMenuItem.Click
+        MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
 End Class

@@ -161,6 +161,12 @@
     <Compile Include="Tamu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TamuInHouse.Designer.vb">
+      <DependentUpon>TamuInHouse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TamuInHouse.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CheckIn.resx">
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tamu.resx">
       <DependentUpon>Tamu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TamuInHouse.resx">
+      <DependentUpon>TamuInHouse.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

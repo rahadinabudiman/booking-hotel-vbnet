@@ -1,5 +1,4 @@
 ﻿Public Class MenuUtama
-
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
         MsgBox("Logout Berhasil")
         Me.Hide()
@@ -41,5 +40,10 @@
     Private Sub PembersihanKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PembersihanKamarToolStripMenuItem.Click
         Me.Hide()
         PembersihanKamar.Show()
+    End Sub
+
+    Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
+        Me.Hide()
+        TamuInHouse.Show()
     End Sub
 End Class

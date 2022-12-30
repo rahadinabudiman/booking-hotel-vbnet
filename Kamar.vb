@@ -1,5 +1,40 @@
 ﻿Imports System.Data.Odbc
 Public Class Kamar
+    Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        MsgBox("Logout Berhasil")
+        Me.Hide()
+        Login.Show()
+        Login.TextBox1.Text = ""
+        Login.TextBox2.Text = ""
+    End Sub
+
+    Private Sub KeluarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Close()
+        Login.Close()
+    End Sub
+
+    Private Sub BukuTamuToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Tamu.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Hide()
+        Kategori_Kamar.Show()
+    End Sub
+    Private Sub CheckInToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Hide()
+        CheckIn.Show()
+    End Sub
+
+    Private Sub CheckOutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Hide()
+        CheckOut.Show()
+    End Sub
+    Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
+        Me.Hide()
+        TamuInHouse.Show()
+    End Sub
     Sub KondisiAwal()
         Label7.Visible = False
         TextBox1.Enabled = False
@@ -149,5 +184,9 @@ Public Class Kamar
         Call Koneksi()
         CMD = New OdbcCommand("SELECT harga_kamar FROM kategori_kamar WHERE tipe_kamar ='" & ComboBox1.Text, Conn)
         Label6.Text = ComboBox1.GetItemText(ComboBox1.SelectedValue)
+    End Sub
+
+    Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KamarToolStripMenuItem.Click
+        MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
 End Class
