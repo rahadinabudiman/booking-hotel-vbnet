@@ -189,4 +189,9 @@ Public Class Kamar
     Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KamarToolStripMenuItem.Click
         MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
+
+    Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
+        Me.Hide()
+        MenuUtama.Show()
+    End Sub
 End Class

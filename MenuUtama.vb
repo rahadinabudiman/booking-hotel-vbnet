@@ -56,4 +56,8 @@
         Me.Hide()
         Food.Show()
     End Sub
+
+    Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
+        MsgBox("Anda sudah berada pada menu yang dipilih")
+    End Sub
 End Class

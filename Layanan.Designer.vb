@@ -30,7 +30,26 @@ Partial Class Layanan
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrasiHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LayananToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KategoriKamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RoomServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FoodToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DrinkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaundryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.PembersihanKamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -100,11 +119,123 @@ Partial Class Layanan
         Me.ComboBox1.Size = New System.Drawing.Size(100, 21)
         Me.ComboBox1.TabIndex = 8
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AdministrasiHotelToolStripMenuItem, Me.RoomServicesToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(303, 24)
+        Me.MenuStrip1.TabIndex = 30
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HalamanUtamaToolStripMenuItem, Me.ToolStripSeparator1, Me.LogoutToolStripMenuItem, Me.KeluarToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'HalamanUtamaToolStripMenuItem
+        '
+        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
+        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
+        'KeluarToolStripMenuItem
+        '
+        Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.KeluarToolStripMenuItem.Text = "Keluar"
+        '
+        'AdministrasiHotelToolStripMenuItem
+        '
+        Me.AdministrasiHotelToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KamarToolStripMenuItem, Me.LayananToolStripMenuItem, Me.ToolStripSeparator2, Me.LaporanToolStripMenuItem, Me.KategoriKamarToolStripMenuItem})
+        Me.AdministrasiHotelToolStripMenuItem.Name = "AdministrasiHotelToolStripMenuItem"
+        Me.AdministrasiHotelToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
+        Me.AdministrasiHotelToolStripMenuItem.Text = "Administrasi Hotel"
+        '
+        'KamarToolStripMenuItem
+        '
+        Me.KamarToolStripMenuItem.Name = "KamarToolStripMenuItem"
+        Me.KamarToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.KamarToolStripMenuItem.Text = "Kamar"
+        '
+        'LayananToolStripMenuItem
+        '
+        Me.LayananToolStripMenuItem.Name = "LayananToolStripMenuItem"
+        Me.LayananToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.LayananToolStripMenuItem.Text = "Layanan"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(152, 6)
+        '
+        'LaporanToolStripMenuItem
+        '
+        Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
+        Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.LaporanToolStripMenuItem.Text = "Laporan"
+        '
+        'KategoriKamarToolStripMenuItem
+        '
+        Me.KategoriKamarToolStripMenuItem.Name = "KategoriKamarToolStripMenuItem"
+        Me.KategoriKamarToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.KategoriKamarToolStripMenuItem.Text = "Kategori Kamar"
+        '
+        'RoomServicesToolStripMenuItem
+        '
+        Me.RoomServicesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FoodToolStripMenuItem, Me.DrinkToolStripMenuItem, Me.LaundryToolStripMenuItem, Me.ToolStripSeparator3, Me.PembersihanKamarToolStripMenuItem})
+        Me.RoomServicesToolStripMenuItem.Name = "RoomServicesToolStripMenuItem"
+        Me.RoomServicesToolStripMenuItem.Size = New System.Drawing.Size(96, 20)
+        Me.RoomServicesToolStripMenuItem.Text = "Room Services"
+        '
+        'FoodToolStripMenuItem
+        '
+        Me.FoodToolStripMenuItem.Name = "FoodToolStripMenuItem"
+        Me.FoodToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FoodToolStripMenuItem.Text = "Food"
+        '
+        'DrinkToolStripMenuItem
+        '
+        Me.DrinkToolStripMenuItem.Name = "DrinkToolStripMenuItem"
+        Me.DrinkToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DrinkToolStripMenuItem.Text = "Drink"
+        '
+        'LaundryToolStripMenuItem
+        '
+        Me.LaundryToolStripMenuItem.Name = "LaundryToolStripMenuItem"
+        Me.LaundryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LaundryToolStripMenuItem.Text = "Laundry"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        '
+        'PembersihanKamarToolStripMenuItem
+        '
+        Me.PembersihanKamarToolStripMenuItem.Name = "PembersihanKamarToolStripMenuItem"
+        Me.PembersihanKamarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PembersihanKamarToolStripMenuItem.Text = "Pembersihan Kamar"
+        '
         'Layanan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(306, 371)
+        Me.ClientSize = New System.Drawing.Size(303, 371)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.TextBox3)
@@ -116,6 +247,8 @@ Partial Class Layanan
         Me.Name = "Layanan"
         Me.Text = "Layanan"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -128,4 +261,22 @@ Partial Class Layanan
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HalamanUtamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KeluarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AdministrasiHotelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KamarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LayananToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KategoriKamarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RoomServicesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FoodToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DrinkToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaundryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents PembersihanKamarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

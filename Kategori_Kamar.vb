@@ -133,4 +133,9 @@ Public Class Kategori_Kamar
     Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KategoriKamarToolStripMenuItem.Click
         MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
+
+    Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
+        Me.Hide()
+        MenuUtama.Show()
+    End Sub
 End Class

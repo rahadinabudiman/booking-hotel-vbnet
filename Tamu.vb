@@ -217,4 +217,9 @@ Public Class Tamu
         Button3.Enabled = True
         Button4.Enabled = True
     End Sub
+
+    Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
+        Me.Hide()
+        MenuUtama.Show()
+    End Sub
 End Class
