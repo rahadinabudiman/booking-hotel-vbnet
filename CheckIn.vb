@@ -305,4 +305,14 @@ Public Class CheckIn
     Private Sub CheckInToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckInToolStripMenuItem.Click
         MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
+
+    Private Sub FoodToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FoodToolStripMenuItem.Click
+        Me.Hide()
+        Food.Show()
+    End Sub
+
+    Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
+        Me.Hide()
+        MenuUtama.Show()
+    End Sub
 End Class

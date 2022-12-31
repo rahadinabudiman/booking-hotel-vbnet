@@ -69,7 +69,7 @@ Public Class Food
     End Sub
     Sub KondisiAwal()
         Call Koneksi()
-        Da = New OdbcDataAdapter("SELECT * FROM pesanan", Conn)
+        Da = New OdbcDataAdapter("SELECT * FROM pesanan WHERE status_pesanan=0", Conn)
         Ds = New DataSet
         Da.Fill(Ds, "pesanan")
         DataGridView1.DataSource = Ds.Tables("pesanan")
@@ -132,5 +132,10 @@ Public Class Food
         If Rd.HasRows Then
             Label10.Text = Rd.Item("id_tamu")
         End If
+    End Sub
+
+    Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
+        Me.Hide()
+        MenuUtama.Show()
     End Sub
 End Class

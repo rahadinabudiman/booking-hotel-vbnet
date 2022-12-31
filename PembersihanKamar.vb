@@ -123,4 +123,9 @@ Public Class PembersihanKamar
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
         Call LoadKamarKotor()
     End Sub
+
+    Private Sub HalamanUtamanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamanToolStripMenuItem.Click
+        Me.Hide()
+        MenuUtama.Show()
+    End Sub
 End Class

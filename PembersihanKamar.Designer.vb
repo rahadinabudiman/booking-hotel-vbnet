@@ -52,6 +52,7 @@ Partial Class PembersihanKamar
         Me.BukuTamuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.HalamanUtamanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -109,7 +110,7 @@ Partial Class PembersihanKamar
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoutToolStripMenuItem, Me.ToolStripSeparator1, Me.KeluarToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HalamanUtamanToolStripMenuItem, Me.ToolStripSeparator1, Me.LogoutToolStripMenuItem, Me.KeluarToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -117,18 +118,18 @@ Partial Class PembersihanKamar
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(109, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
         '
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'AdministrasiHotelToolStripMenuItem
@@ -257,6 +258,12 @@ Partial Class PembersihanKamar
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Nomor Kamar"
         '
+        'HalamanUtamanToolStripMenuItem
+        '
+        Me.HalamanUtamanToolStripMenuItem.Name = "HalamanUtamanToolStripMenuItem"
+        Me.HalamanUtamanToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.HalamanUtamanToolStripMenuItem.Text = "Halaman Utama"
+        '
         'PembersihanKamar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -309,4 +316,5 @@ Partial Class PembersihanKamar
     Friend WithEvents BukuTamuToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents HalamanUtamanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
