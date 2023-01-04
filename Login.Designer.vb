@@ -31,6 +31,7 @@ Partial Class Login
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -111,11 +112,22 @@ Partial Class Login
         Me.Button2.Text = "Close"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(106, 305)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Label5"
+        Me.Label5.Visible = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(287, 327)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -140,4 +152,5 @@ Partial Class Login
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

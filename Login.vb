@@ -17,7 +17,6 @@ Public Class Login
                 TextBox2.Clear()
                 TextBox1.Focus()
             End If
-
         End If
     End Sub
 

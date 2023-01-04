@@ -24,8 +24,9 @@ Partial Class MenuUtama
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrasiHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,8 +48,18 @@ Partial Class MenuUtama
         Me.BukuTamuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -67,16 +78,22 @@ Partial Class MenuUtama
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
-        'LogoutToolStripMenuItem
+        'HalamanUtamaToolStripMenuItem
         '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
+        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
+        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'KeluarToolStripMenuItem
         '
@@ -210,17 +227,90 @@ Partial Class MenuUtama
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Label2"
         '
-        'HalamanUtamaToolStripMenuItem
+        'Label4
         '
-        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
-        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(44, 36)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Label4"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 290)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(21, 24)
+        Me.DataGridView1.TabIndex = 5
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 78)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(129, 77)
+        Me.GroupBox1.TabIndex = 6
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Total Tamu Menginap"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Location = New System.Drawing.Point(179, 78)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(129, 77)
+        Me.GroupBox2.TabIndex = 7
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Last Reservation"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(40, 26)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Label3"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(40, 51)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Label5"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(90, 26)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Label6"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(348, 122)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'MenuUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 326)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -229,6 +319,11 @@ Partial Class MenuUtama
         Me.Text = "MenuUtama"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -259,4 +354,12 @@ Partial Class MenuUtama
     Friend WithEvents KategoriKamarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents HalamanUtamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
