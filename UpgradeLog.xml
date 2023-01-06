@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?>
+<UpgradeLog>
+<Properties>
+<Property Name="Solution" Value="C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel.sln"></Property>
+<Property Name="Solution File" Value="C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel"></Property>
+<Property Name="Date" Value="26/12/2022 14:38:51"></Property>
+</Properties>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="App.config" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Form1.vb" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Form1.Designer.vb" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Form1.resx" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="My Project" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="app.manifest" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Application.myapp" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Application.Designer.vb" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="AssemblyInfo.vb" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Resources.resx" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Resources.Designer.vb" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Settings.settings" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="Kelompok_3_Booking_Hotel" Source="Settings.Designer.vb" Description="No need to convert"></Event>
+
+</UpgradeLog>
