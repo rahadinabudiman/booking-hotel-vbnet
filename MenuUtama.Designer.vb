@@ -22,6 +22,7 @@ Partial Class MenuUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,6 +35,7 @@ Partial Class MenuUtama
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KategoriKamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TambahAdminToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RoomServicesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FoodToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DrinkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,6 +57,12 @@ Partial Class MenuUtama
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -102,7 +110,7 @@ Partial Class MenuUtama
         '
         'AdministrasiHotelToolStripMenuItem
         '
-        Me.AdministrasiHotelToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KamarToolStripMenuItem, Me.LayananToolStripMenuItem, Me.ToolStripSeparator2, Me.LaporanToolStripMenuItem, Me.KategoriKamarToolStripMenuItem})
+        Me.AdministrasiHotelToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KamarToolStripMenuItem, Me.LayananToolStripMenuItem, Me.ToolStripSeparator2, Me.LaporanToolStripMenuItem, Me.KategoriKamarToolStripMenuItem, Me.TambahAdminToolStripMenuItem})
         Me.AdministrasiHotelToolStripMenuItem.Name = "AdministrasiHotelToolStripMenuItem"
         Me.AdministrasiHotelToolStripMenuItem.Size = New System.Drawing.Size(117, 20)
         Me.AdministrasiHotelToolStripMenuItem.Text = "Administrasi Hotel"
@@ -135,6 +143,12 @@ Partial Class MenuUtama
         Me.KategoriKamarToolStripMenuItem.Name = "KategoriKamarToolStripMenuItem"
         Me.KategoriKamarToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.KategoriKamarToolStripMenuItem.Text = "Kategori Kamar"
+        '
+        'TambahAdminToolStripMenuItem
+        '
+        Me.TambahAdminToolStripMenuItem.Name = "TambahAdminToolStripMenuItem"
+        Me.TambahAdminToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.TambahAdminToolStripMenuItem.Text = "Administrator"
         '
         'RoomServicesToolStripMenuItem
         '
@@ -238,7 +252,7 @@ Partial Class MenuUtama
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 290)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 277)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(21, 24)
         Me.DataGridView1.TabIndex = 5
@@ -292,11 +306,64 @@ Partial Class MenuUtama
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Label3"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(162, 39)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(39, 13)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Label7"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(595, 39)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(52, 13)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "Tanggal :"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(653, 39)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(39, 13)
+        Me.Label9.TabIndex = 10
+        Me.Label9.Text = "Label9"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(615, 67)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(32, 13)
+        Me.Label10.TabIndex = 11
+        Me.Label10.Text = "Jam :"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(653, 67)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(45, 13)
+        Me.Label11.TabIndex = 12
+        Me.Label11.Text = "Label11"
+        '
+        'Timer1
+        '
+        '
         'MenuUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 326)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
@@ -350,4 +417,11 @@ Partial Class MenuUtama
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents TambahAdminToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

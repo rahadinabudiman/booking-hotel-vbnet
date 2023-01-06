@@ -27,7 +27,6 @@ Partial Class Kamar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -39,8 +38,9 @@ Partial Class Kamar
         Me.Label7 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrasiHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,9 +54,9 @@ Partial Class Kamar
         Me.TamuInHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.BukuTamuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -99,14 +99,6 @@ Partial Class Kamar
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(47, 20)
         Me.TextBox3.TabIndex = 5
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(8, 235)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(264, 112)
-        Me.DataGridView1.TabIndex = 13
         '
         'Button4
         '
@@ -203,16 +195,22 @@ Partial Class Kamar
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
-        'LogoutToolStripMenuItem
+        'HalamanUtamaToolStripMenuItem
         '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
+        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
+        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'KeluarToolStripMenuItem
         '
@@ -292,11 +290,13 @@ Partial Class Kamar
         Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.BukuTamuToolStripMenuItem.Text = "Buku Tamu"
         '
-        'HalamanUtamaToolStripMenuItem
+        'DataGridView1
         '
-        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
-        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(8, 235)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(264, 112)
+        Me.DataGridView1.TabIndex = 13
         '
         'Kamar
         '
@@ -321,9 +321,9 @@ Partial Class Kamar
         Me.Controls.Add(Me.Label1)
         Me.Name = "Kamar"
         Me.Text = "Kamar"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -333,7 +333,6 @@ Partial Class Kamar
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
@@ -361,4 +360,5 @@ Partial Class Kamar
     Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BukuTamuToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HalamanUtamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
 End Class

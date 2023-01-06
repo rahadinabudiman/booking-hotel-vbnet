@@ -50,7 +50,7 @@ Public Class Kamar
         Button1.Enabled = True
         Button3.Enabled = True
         Call Koneksi()
-        Da = New OdbcDataAdapter("SELECT * FROM kamar", Conn)
+        Da = New OdbcDataAdapter("SELECT * FROM kamar WHERE status=0", Conn)
         Ds = New DataSet
         Da.Fill(Ds, "kamar")
         DataGridView1.DataSource = Ds.Tables("kamar")
@@ -125,7 +125,7 @@ Public Class Kamar
         Da.Fill(Dt)
 
         If TextBox1.Text = Label7.Text Then
-            Dim UpdateData, CheckData As String
+            Dim UpdateData As String
             UpdateData = "UPDATE kamar SET tipe_kamar='" & ComboBox1.Text & "' , kapasitas='" & TextBox3.Text & "' WHERE id_kamar = '" & Label5.Text & "'"
             CMD = New OdbcCommand(UpdateData, Conn)
             CMD.ExecuteNonQuery()
@@ -138,7 +138,7 @@ Public Class Kamar
                 If TextBox1.Text = "" Or TextBox3.Text = "" Or ComboBox1.Text = "" Then
                     MsgBox("Data tidak boleh kosong")
                 Else
-                    Dim UpdateData, CheckData As String
+                    Dim UpdateData As String
                     UpdateData = "UPDATE kamar SET nomor_kamar='" & TextBox1.Text & "', tipe_kamar='" & ComboBox1.Text & "' , kapasitas='" & TextBox3.Text & "' WHERE id_kamar = '" & Label5.Text & "'"
                     CMD = New OdbcCommand(UpdateData, Conn)
                     CMD.ExecuteNonQuery()

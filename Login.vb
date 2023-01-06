@@ -11,6 +11,20 @@ Public Class Login
                 MenuUtama.Show()
                 Me.Hide()
                 MenuUtama.Label2.Text = Rd.Item("nama_admin")
+                MenuUtama.Label7.Text = Rd.Item("tipe_administrator")
+                If MenuUtama.Label7.Text = "Super Administrator" Then
+                    MenuUtama.KamarToolStripMenuItem.Enabled = True
+                    MenuUtama.LayananToolStripMenuItem.Enabled = True
+                    MenuUtama.LaporanToolStripMenuItem.Enabled = True
+                    MenuUtama.KategoriKamarToolStripMenuItem.Enabled = True
+                    MenuUtama.AdministrasiHotelToolStripMenuItem.Enabled = True
+                Else
+                    MenuUtama.KamarToolStripMenuItem.Enabled = False
+                    MenuUtama.LayananToolStripMenuItem.Enabled = False
+                    MenuUtama.LaporanToolStripMenuItem.Enabled = False
+                    MenuUtama.KategoriKamarToolStripMenuItem.Enabled = False
+                    MenuUtama.AdministrasiHotelToolStripMenuItem.Enabled = False
+                End If
             Else
                 MsgBox("Username atau Password Salah")
                 TextBox1.Clear()

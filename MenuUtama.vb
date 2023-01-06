@@ -88,6 +88,28 @@ Public Class MenuUtama
         Label3.DataBindings.Add("Text", Dt, "tipe_kamar")
         Label5.DataBindings.Add("Text", Dt, "nomor_kamar")
     End Sub
+    Sub Tekunci()
+        KamarToolStripMenuItem.Enabled = False
+        LayananToolStripMenuItem.Enabled = False
+        LaporanToolStripMenuItem.Enabled = False
+        KategoriKamarToolStripMenuItem.Enabled = False
+        AdministrasiHotelToolStripMenuItem.Enabled = False
+    End Sub
+    Sub Terbuka()
+        If Label7.Text = "2" Then
+            KamarToolStripMenuItem.Enabled = True
+            LayananToolStripMenuItem.Enabled = True
+            LaporanToolStripMenuItem.Enabled = True
+            KategoriKamarToolStripMenuItem.Enabled = True
+            AdministrasiHotelToolStripMenuItem.Enabled = True
+        Else
+            KamarToolStripMenuItem.Enabled = False
+            LayananToolStripMenuItem.Enabled = False
+            LaporanToolStripMenuItem.Enabled = False
+            KategoriKamarToolStripMenuItem.Enabled = False
+            AdministrasiHotelToolStripMenuItem.Enabled = False
+        End If
+    End Sub
     Private Sub MenuUtama_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DataGridView1.Visible = False
         Call Koneksi()
@@ -98,5 +120,18 @@ Public Class MenuUtama
         Call JumlahData()
         Call AmbilIdKamar()
         Call AmbilLastReservation()
+        Call Tekunci()
+        Call Terbuka()
+        Label9.Text = Today
+        Timer1.Enabled = True
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Label11.Text = TimeOfDay
+    End Sub
+
+    Private Sub TambahAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TambahAdminToolStripMenuItem.Click
+        TambahAdmin.Show()
+        Me.Hide()
     End Sub
 End Class
