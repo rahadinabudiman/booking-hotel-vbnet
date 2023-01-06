@@ -112,7 +112,5 @@ Public Class TambahAdmin
             MsgBox("Berhasil Ubah Data")
             Call KondisiAwal()
         End If
-
-
     End Sub
 End Class

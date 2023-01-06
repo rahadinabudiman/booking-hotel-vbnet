@@ -18,7 +18,7 @@ Public Class CheckOut
     End Sub
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
         MsgBox("Logout Berhasil")
-        Me.Hide()
+        Me.Close()
         Login.Show()
         Login.TextBox1.Text = ""
         Login.TextBox2.Text = ""
@@ -31,30 +31,30 @@ Public Class CheckOut
 
     Private Sub BukuTamuToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BukuTamuToolStripMenuItem.Click
         Tamu.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KategoriKamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Kategori_Kamar.Show()
     End Sub
 
     Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Kamar.Show()
     End Sub
 
     Private Sub CheckInToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckInToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         CheckIn.Show()
     End Sub
     Private Sub PembersihanKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PembersihanKamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         PembersihanKamar.Show()
     End Sub
 
     Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         TamuInHouse.Show()
     End Sub
     Sub KondisiAwal()
@@ -203,12 +203,12 @@ Public Class CheckOut
     End Sub
 
     Private Sub FoodToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FoodToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Food.Show()
     End Sub
 
     Private Sub MenuUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuUtamaToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         MenuUtama.Show()
     End Sub
 End Class

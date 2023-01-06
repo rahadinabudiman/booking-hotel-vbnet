@@ -58,8 +58,9 @@ Partial Class CheckIn
         Me.Label18 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrasiHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,7 +80,9 @@ Partial Class CheckIn
         Me.TamuInHouseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.BukuTamuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -349,7 +352,7 @@ Partial Class CheckIn
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(335, 107)
+        Me.Label15.Location = New System.Drawing.Point(324, 146)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(0, 13)
         Me.Label15.TabIndex = 33
@@ -357,7 +360,7 @@ Partial Class CheckIn
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(360, 113)
+        Me.Label16.Location = New System.Drawing.Point(349, 152)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(0, 13)
         Me.Label16.TabIndex = 34
@@ -395,21 +398,27 @@ Partial Class CheckIn
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
-        'LogoutToolStripMenuItem
+        'HalamanUtamaToolStripMenuItem
         '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
+        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
+        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(109, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'AdministrasiHotelToolStripMenuItem
@@ -520,17 +529,41 @@ Partial Class CheckIn
         Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.BukuTamuToolStripMenuItem.Text = "Buku Tamu"
         '
-        'HalamanUtamaToolStripMenuItem
+        'Label19
         '
-        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
-        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(273, 154)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(33, 13)
+        Me.Label19.TabIndex = 38
+        Me.Label19.Text = "Maks"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(309, 154)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(13, 13)
+        Me.Label20.TabIndex = 39
+        Me.Label20.Text = "0"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(334, 154)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(36, 13)
+        Me.Label21.TabIndex = 40
+        Me.Label21.Text = "Orang"
         '
         'CheckIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(543, 614)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
@@ -630,4 +663,7 @@ Partial Class CheckIn
     Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BukuTamuToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HalamanUtamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
 End Class

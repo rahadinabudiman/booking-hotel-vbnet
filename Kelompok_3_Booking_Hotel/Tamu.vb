@@ -2,7 +2,7 @@
 Public Class Tamu
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
         MsgBox("Logout Berhasil")
-        Me.Hide()
+        Me.Close()
         Login.Show()
         Login.TextBox1.Text = ""
         Login.TextBox2.Text = ""
@@ -14,36 +14,36 @@ Public Class Tamu
     End Sub
 
     Private Sub BukuTamuToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BukuTamuToolStripMenuItem.Click
-       MsgBox("Anda sudah berada di menu yang dipilih")
+        MsgBox("Anda sudah berada di menu yang dipilih")
     End Sub
 
     Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KategoriKamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Kategori_Kamar.Show()
     End Sub
 
     Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Kamar.Show()
     End Sub
 
     Private Sub CheckInToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckInToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         CheckIn.Show()
     End Sub
 
     Private Sub CheckOutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckOutToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         CheckOut.Show()
     End Sub
 
     Private Sub PembersihanKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PembersihanKamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         PembersihanKamar.Show()
     End Sub
 
     Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         TamuInHouse.Show()
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
@@ -170,32 +170,32 @@ Public Class Tamu
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-            Button1.Text = "Simpan"
-            Button2.Enabled = True
-            Button4.Enabled = True
+        Button1.Text = "Simpan"
+        Button2.Enabled = True
+        Button4.Enabled = True
         Button3.Text = "Batal"
         Button1.Enabled = False
-            Call FieldAktif()
-            Call Koneksi()
-            CMD = New OdbcCommand("SELECT * FROM tamu WHERE nomor_identitas = '" & TextBox9.Text & "'", Conn)
-            Rd = CMD.ExecuteReader
-            Rd.Read()
-            If Rd.HasRows Then
-                TextBox1.Text = Rd.Item("nomor_identitas")
-                TextBox1.ReadOnly = True
-                TextBox2.Text = Rd.Item("nama_depan_tamu")
-                TextBox3.Text = Rd.Item("nama_belakang_tamu")
-                TextBox4.Text = Rd.Item("nomor_hp")
-                TextBox5.Text = Rd.Item("email")
-                TextBox6.Text = Rd.Item("alamat_tinggal")
-                TextBox7.Text = Rd.Item("kota")
-                TextBox8.Text = Rd.Item("provinsi")
-                ComboBox1.Text = Rd.Item("panggilan_tamu")
-                ComboBox2.Text = Rd.Item("identitas_tamu")
-                ComboBox3.Text = Rd.Item("warga_negara")
-            Else
-                MsgBox("Data Tidak Ada")
-            End If
+        Call FieldAktif()
+        Call Koneksi()
+        CMD = New OdbcCommand("SELECT * FROM tamu WHERE nomor_identitas = '" & TextBox9.Text & "'", Conn)
+        Rd = CMD.ExecuteReader
+        Rd.Read()
+        If Rd.HasRows Then
+            TextBox1.Text = Rd.Item("nomor_identitas")
+            TextBox1.ReadOnly = True
+            TextBox2.Text = Rd.Item("nama_depan_tamu")
+            TextBox3.Text = Rd.Item("nama_belakang_tamu")
+            TextBox4.Text = Rd.Item("nomor_hp")
+            TextBox5.Text = Rd.Item("email")
+            TextBox6.Text = Rd.Item("alamat_tinggal")
+            TextBox7.Text = Rd.Item("kota")
+            TextBox8.Text = Rd.Item("provinsi")
+            ComboBox1.Text = Rd.Item("panggilan_tamu")
+            ComboBox2.Text = Rd.Item("identitas_tamu")
+            ComboBox3.Text = Rd.Item("warga_negara")
+        Else
+            MsgBox("Data Tidak Ada")
+        End If
     End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -219,7 +219,7 @@ Public Class Tamu
     End Sub
 
     Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         MenuUtama.Show()
     End Sub
 End Class

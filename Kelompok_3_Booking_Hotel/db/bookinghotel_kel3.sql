@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2022 at 01:26 PM
+-- Generation Time: Jan 06, 2023 at 06:22 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -41,9 +41,9 @@ CREATE TABLE `kamar` (
 
 INSERT INTO `kamar` (`id_kamar`, `nomor_kamar`, `tipe_kamar`, `kapasitas`, `status`) VALUES
 (2, 123, 'GEGE', '20', 0),
-(3, 2001, 'DEBES', '1', 0),
-(4, 10, 'GEGE', '1', 0),
-(5, 1002, 'PERFECTOR', '2', 1);
+(3, 2001, 'DEBES', '1', 1),
+(4, 101, 'GEGE', '1', 1),
+(5, 1002, 'PERFECTOR', '3', 1);
 
 -- --------------------------------------------------------
 
@@ -79,6 +79,14 @@ CREATE TABLE `layanan` (
   `harga` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `layanan`
+--
+
+INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `kategori`, `harga`) VALUES
+(1, 'Pisang Keju', 'Makanan', 5000),
+(2, 'Martabak', 'Makanan', 15000);
+
 -- --------------------------------------------------------
 
 --
@@ -88,15 +96,49 @@ CREATE TABLE `layanan` (
 CREATE TABLE `login` (
   `id_login` int(11) NOT NULL,
   `username` varchar(25) DEFAULT NULL,
-  `password` varchar(25) DEFAULT NULL
+  `password` varchar(25) DEFAULT NULL,
+  `nama_admin` varchar(25) NOT NULL,
+  `tipe_administrator` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id_login`, `username`, `password`) VALUES
-(1, 'admin', 'admin');
+INSERT INTO `login` (`id_login`, `username`, `password`, `nama_admin`, `tipe_administrator`) VALUES
+(1, 'admin', 'admin', 'R4HA', 'Super Administrator'),
+(2, 'r4ha', 'r4ha', 'Keyze', 'Super Administrator'),
+(4, 'k', 'k', 'k', 'Super Administrator');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesanan`
+--
+
+CREATE TABLE `pesanan` (
+  `id_pesanan` int(11) NOT NULL,
+  `id_pesan_kamar` int(11) DEFAULT NULL,
+  `id_tamu` int(11) DEFAULT NULL,
+  `id_layanan` int(11) DEFAULT NULL,
+  `nama_layanan` varchar(25) DEFAULT NULL,
+  `banyak_pesanan` int(5) DEFAULT NULL,
+  `total_harga` int(20) DEFAULT NULL,
+  `status_pesanan` int(2) DEFAULT NULL,
+  `tanggal_pesan` date NOT NULL,
+  `waktu_pesan` time NOT NULL,
+  `tanggal_bayar` date NOT NULL,
+  `waktu_bayar` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesanan`
+--
+
+INSERT INTO `pesanan` (`id_pesanan`, `id_pesan_kamar`, `id_tamu`, `id_layanan`, `nama_layanan`, `banyak_pesanan`, `total_harga`, `status_pesanan`, `tanggal_pesan`, `waktu_pesan`, `tanggal_bayar`, `waktu_bayar`) VALUES
+(2, 20, 13, 1, 'Pisang Keju', 5, 25000, 1, '2022-12-30', '23:55:15', '2022-12-29', '12:04:20'),
+(3, 20, 13, 2, 'Martabak', 3, 45000, 1, '2022-12-31', '00:03:23', '2022-12-29', '12:04:20'),
+(4, 22, 13, 1, 'Pisang Keju', 10, 50000, 1, '2022-12-31', '12:18:57', '2022-12-29', '12:20:04');
 
 -- --------------------------------------------------------
 
@@ -128,7 +170,13 @@ CREATE TABLE `pesan_kamar` (
 --
 
 INSERT INTO `pesan_kamar` (`id_pesan_kamar`, `invoice`, `id_tamu`, `jumlah_tamu`, `id_kamar`, `tipe_kamar`, `harga_awal`, `tanggal_masuk`, `jam_masuk`, `lama_pesan`, `tanggal_keluar`, `jam_keluar`, `jumlah_deposit`, `denda`, `harga_akhir`, `status_pesan`) VALUES
-(11, 'YYWDU', 13, 2, 5, 'PERFECTOR', 150100, '2022-12-27', '22:54:01', 1, NULL, NULL, 150000, 0, 0, 0);
+(19, 'wwcRN', 13, 3, 3, 'DEBES', 174000, '2022-12-30', '09:44:32', 12, '2022-12-29', '09:44:54', 0, 0, 0, 1),
+(20, 'zIkNJ', 13, 3, 5, 'PERFECTOR', 150500, '2022-12-30', '19:46:06', 5, '2022-12-29', '12:04:20', 0, 0, 70000, 1),
+(21, 'qLnL1', 14, 3, 3, 'DEBES', 156000, '2022-12-30', '20:14:51', 3, '2022-12-29', '12:02:04', 0, 0, 0, 1),
+(22, '4FwWR', 13, 35, 4, 'GEGE', 250000, '2022-12-31', '12:12:29', 2, '2022-12-29', '12:20:04', 0, 0, 50000, 1),
+(23, 'vvHqF', 13, 3, 5, 'PERFECTOR', 150500, '2023-01-04', '23:42:46', 5, NULL, NULL, 150000, 0, 0, 0),
+(24, 'aUHIw', 14, 3, 3, 'DEBES', 152000, '2023-01-04', '23:44:24', 1, NULL, NULL, 150000, 0, 0, 0),
+(25, 'rbCc9', 15, 1, 4, 'GEGE', 200000, '2023-01-07', '00:21:31', 1, NULL, NULL, 150000, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -157,7 +205,10 @@ CREATE TABLE `tamu` (
 --
 
 INSERT INTO `tamu` (`id_tamu`, `nama_depan_tamu`, `nama_belakang_tamu`, `panggilan_tamu`, `identitas_tamu`, `nomor_identitas`, `warga_negara`, `alamat_tinggal`, `kota`, `provinsi`, `nomor_hp`, `email`, `status`) VALUES
-(13, 'RAHADINA', 'BUDIMAN', 'Mr.', 'KTP', '2020', 'WNI', '1212', '1212', '1212', '8023', '0823', 1);
+(13, 'RAHADINA', 'BUDIMAN', 'Mr.', 'KTP', '2020', 'WNI', '1212', '1212', '1212', '8023', '0823', 1),
+(14, 'k', 'k', 'Mr.', 'KTP', 'k', 'WNI', 'k', 'k', 'k', 'k', 'k', 1),
+(15, 'k', 'k', 'Mr.', 'KTP', 'k', 'WNI', 'k', 'k', 'k', 'k', 'k', 1),
+(16, 'z', 'z', 'Mr.', 'KTP', 'z', 'WNI', 'z', 'z', 'z', 'z', 'z', 0);
 
 --
 -- Indexes for dumped tables
@@ -186,6 +237,12 @@ ALTER TABLE `layanan`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_login`);
+
+--
+-- Indexes for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD PRIMARY KEY (`id_pesanan`);
 
 --
 -- Indexes for table `pesan_kamar`
@@ -219,25 +276,31 @@ ALTER TABLE `kategori_kamar`
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pesan_kamar`
 --
 ALTER TABLE `pesan_kamar`
-  MODIFY `id_pesan_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pesan_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tamu`
 --
 ALTER TABLE `tamu`
-  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

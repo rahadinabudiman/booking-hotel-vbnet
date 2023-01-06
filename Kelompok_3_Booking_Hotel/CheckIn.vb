@@ -15,30 +15,30 @@ Public Class CheckIn
 
     Private Sub BukuTamuToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BukuTamuToolStripMenuItem.Click
         Tamu.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub KategoriKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KategoriKamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Kategori_Kamar.Show()
     End Sub
 
     Private Sub KamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Kamar.Show()
     End Sub
     Private Sub CheckOutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckOutToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         CheckOut.Show()
     End Sub
 
     Private Sub PembersihanKamarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PembersihanKamarToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         PembersihanKamar.Show()
     End Sub
 
     Private Sub TamuInHouseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TamuInHouseToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         TamuInHouse.Show()
     End Sub
     Sub DisabledAll()
@@ -140,40 +140,45 @@ Public Class CheckIn
             If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox5.Text = "" Or TextBox6.Text = "" Or TextBox7.Text = "" Or ComboBox1.Text = "" Or ComboBox2.Text = "" Or ComboBox3.Text = "" Then
                 MsgBox("Data tidak boleh kosong")
             Else
-                If TextBox7.Text < 0 Then
-                    MsgBox("Uang tidak mencukupi")
+                If TextBox1.Text > Label20.Text Then
+                    MsgBox("Jumlah orang melebihi kapasitas")
                 Else
-                    Call Koneksi()
-                    Dim InputData, CheckData, GantiStatusKamar, GantiStatusTamu As String
-                    Dim id_tamu, id_kamar, status_pesan, status_kamar, status_tamu As Integer
-                    id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
-                    id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
-                    status_pesan = 0
-                    status_kamar = 1
-                    status_tamu = 1
-                    Dim TglSaya As String
-                    TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
-                    Dim nilai As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-                    Dim hasil As String = ""
-                    Dim Count = 0
-                    Dim Random As New Random
-                    Dim strpos = ""
-                    While Count < 5
-                        strpos = Random.Next(0, nilai.Length)
-                        hasil = hasil & nilai(strpos)
-                        Count = Count + 1
-                    End While
-                    InputData = "INSERT INTO pesan_kamar (invoice,tipe_kamar,id_tamu,jumlah_tamu,id_kamar,harga_awal,lama_pesan,jumlah_deposit,tanggal_masuk,jam_masuk,status_pesan) VALUES ('" & hasil & "','" & ComboBox2.Text & "','" & id_tamu & "', '" & TextBox1.Text & "','" & id_kamar & "', '" & TextBox5.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TglSaya & "','" & Now.ToLongTimeString & "','status_pesan')"
-                    GantiStatusKamar = "UPDATE kamar SET status='" & status_kamar & "' WHERE id_kamar='" & id_kamar & "'"
-                    GantiStatusTamu = "UPDATE tamu SET status='" & status_tamu & "' WHERE id_tamu='" & id_tamu & "'"
-                    CMD = New OdbcCommand(GantiStatusTamu, Conn)
-                    CMD.ExecuteNonQuery()
-                    CMD = New OdbcCommand(GantiStatusKamar, Conn)
-                    CMD.ExecuteNonQuery()
-                    CMD = New OdbcCommand(InputData, Conn)
-                    CMD.ExecuteNonQuery()
-                    MsgBox("Berhasil input Data")
-                    Call KondisiAwal()
+
+                    If TextBox7.Text < 0 Then
+                        MsgBox("Uang tidak mencukupi")
+                    Else
+                        Call Koneksi()
+                        Dim InputData, CheckData, GantiStatusKamar, GantiStatusTamu As String
+                        Dim id_tamu, id_kamar, status_pesan, status_kamar, status_tamu As Integer
+                        id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
+                        id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
+                        status_pesan = 0
+                        status_kamar = 1
+                        status_tamu = 1
+                        Dim TglSaya As String
+                        TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
+                        Dim nilai As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                        Dim hasil As String = ""
+                        Dim Count = 0
+                        Dim Random As New Random
+                        Dim strpos = ""
+                        While Count < 5
+                            strpos = Random.Next(0, nilai.Length)
+                            hasil = hasil & nilai(strpos)
+                            Count = Count + 1
+                        End While
+                        InputData = "INSERT INTO pesan_kamar (invoice,tipe_kamar,id_tamu,jumlah_tamu,id_kamar,harga_awal,lama_pesan,jumlah_deposit,tanggal_masuk,jam_masuk,status_pesan) VALUES ('" & hasil & "','" & ComboBox2.Text & "','" & id_tamu & "', '" & TextBox1.Text & "','" & id_kamar & "', '" & TextBox5.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TglSaya & "','" & Now.ToLongTimeString & "','status_pesan')"
+                        GantiStatusKamar = "UPDATE kamar SET status='" & status_kamar & "' WHERE id_kamar='" & id_kamar & "'"
+                        GantiStatusTamu = "UPDATE tamu SET status='" & status_tamu & "' WHERE id_tamu='" & id_tamu & "'"
+                        CMD = New OdbcCommand(GantiStatusTamu, Conn)
+                        CMD.ExecuteNonQuery()
+                        CMD = New OdbcCommand(GantiStatusKamar, Conn)
+                        CMD.ExecuteNonQuery()
+                        CMD = New OdbcCommand(InputData, Conn)
+                        CMD.ExecuteNonQuery()
+                        MsgBox("Berhasil input Data")
+                        Call KondisiAwal()
+                    End If
                 End If
             End If
         End If
@@ -311,12 +316,24 @@ Public Class CheckIn
     End Sub
 
     Private Sub FoodToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FoodToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         Food.Show()
     End Sub
 
     Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
-        Me.Hide()
+        Me.Close()
         MenuUtama.Show()
+    End Sub
+
+    Private Sub ComboBox3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox3.SelectedIndexChanged
+        Call Koneksi()
+        Dim id_kamar As Integer
+        id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
+        CMD = New OdbcCommand("SELECT kapasitas FROM kamar WHERE id_kamar='" & id_kamar & "'", Conn)
+        Rd = CMD.ExecuteReader
+        Rd.Read()
+        If Rd.HasRows Then
+            Label20.Text = Rd.Item("kapasitas")
+        End If
     End Sub
 End Class
