@@ -104,10 +104,10 @@ Public Class CheckOut
         Call KondisiAwal()
         Call ListBoxMakanan()
         Call ResetAll()
-        DateTimePicker1.CustomFormat = "HH:mm tt"
         Label18.Visible = False
         Label19.Visible = False
         Label20.Visible = False
+        DateTimePicker2.Visible = False
     End Sub
     Sub TotalPesanan()
         Dim id_tamu, totalharga As Integer
@@ -140,10 +140,11 @@ Public Class CheckOut
         Call Koneksi()
         id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
         Panggil_Pesan_Kamar = "SELECT id_pesan_kamar FROM pesan_kamar WHERE id_tamu ='" & id_tamu & "'"
-        CMD = New OdbcCommand("SELECT ps.jumlah_deposit, ps.id_pesan_kamar, ps.harga_awal, ps.tipe_kamar, t.id_tamu, t.nama_depan_tamu, k.id_kamar, k.nomor_kamar, ps.id_kamar, ps.id_tamu FROM pesan_kamar as ps INNER JOIN tamu as t ON ps.id_tamu=t.id_tamu INNER JOIN kamar as k ON ps.id_kamar=k.id_kamar WHERE status_pesan=0 AND ps.id_tamu='" & id_tamu & "'", Conn)
+        CMD = New OdbcCommand("SELECT ps.tanggal_masuk, ps.jam_masuk, ps.jumlah_deposit, ps.id_pesan_kamar, ps.harga_awal, ps.tipe_kamar, t.id_tamu, t.nama_depan_tamu, k.id_kamar, k.nomor_kamar, ps.id_kamar, ps.id_tamu FROM pesan_kamar as ps INNER JOIN tamu as t ON ps.id_tamu=t.id_tamu INNER JOIN kamar as k ON ps.id_kamar=k.id_kamar WHERE status_pesan=0 AND ps.id_tamu='" & id_tamu & "'", Conn)
         Rd = CMD.ExecuteReader
         Rd.Read()
         If Rd.HasRows Then
+            DateTimePicker2.Text = Rd.Item("tanggal_masuk")
             Label9.Text = Rd.Item("tipe_kamar")
             Label10.Text = Rd.Item("nomor_kamar")
             Label13.Text = Rd.Item("harga_awal")
@@ -157,6 +158,7 @@ Public Class CheckOut
         Label24.Text = Val(Label13.Text) - Val(Label14.Text)
         Call KondisiAwal()
         Call NampilkanDataMakanan()
+        Label11.Text = DateTimePicker2.Text
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click

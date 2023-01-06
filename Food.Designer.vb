@@ -37,8 +37,9 @@ Partial Class Food
         Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrasiHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -62,7 +63,6 @@ Partial Class Food
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.HalamanUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -159,7 +159,7 @@ Partial Class Food
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Simpan Data"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridView1
@@ -195,16 +195,22 @@ Partial Class Food
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
-        'LogoutToolStripMenuItem
+        'HalamanUtamaToolStripMenuItem
         '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
+        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
+        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'KeluarToolStripMenuItem
         '
@@ -294,30 +300,30 @@ Partial Class Food
         'CheckInToolStripMenuItem
         '
         Me.CheckInToolStripMenuItem.Name = "CheckInToolStripMenuItem"
-        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.CheckInToolStripMenuItem.Text = "Check In"
         '
         'CheckOutToolStripMenuItem
         '
         Me.CheckOutToolStripMenuItem.Name = "CheckOutToolStripMenuItem"
-        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.CheckOutToolStripMenuItem.Text = "Check Out"
         '
         'TamuInHouseToolStripMenuItem
         '
         Me.TamuInHouseToolStripMenuItem.Name = "TamuInHouseToolStripMenuItem"
-        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.TamuInHouseToolStripMenuItem.Text = "Tamu In House"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(150, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(151, 6)
         '
         'BukuTamuToolStripMenuItem
         '
         Me.BukuTamuToolStripMenuItem.Name = "BukuTamuToolStripMenuItem"
-        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.BukuTamuToolStripMenuItem.Text = "Buku Tamu"
         '
         'Button2
@@ -353,12 +359,6 @@ Partial Class Food
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(91, 20)
         Me.DateTimePicker1.TabIndex = 17
-        '
-        'HalamanUtamaToolStripMenuItem
-        '
-        Me.HalamanUtamaToolStripMenuItem.Name = "HalamanUtamaToolStripMenuItem"
-        Me.HalamanUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.HalamanUtamaToolStripMenuItem.Text = "Halaman Utama"
         '
         'Food
         '

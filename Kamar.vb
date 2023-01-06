@@ -54,6 +54,7 @@ Public Class Kamar
         Ds = New DataSet
         Da.Fill(Ds, "kamar")
         DataGridView1.DataSource = Ds.Tables("kamar")
+        Label6.Visible = False
     End Sub
 
     Sub FieldAktif()
@@ -70,7 +71,6 @@ Public Class Kamar
             Button4.Text = "Batal"
             Call FieldAktif()
         Else
-
             Call Koneksi()
             CMD = New OdbcCommand("SELECT nomor_kamar FROM kamar WHERE nomor_kamar = '" & TextBox1.Text & "'", Conn)
             Da = New OdbcDataAdapter(CMD)
@@ -86,7 +86,7 @@ Public Class Kamar
                     Dim Status As Integer
                     Status = 0
                     Call Koneksi()
-                    Dim InputData, CheckData As String
+                    Dim InputData As String
                     InputData = "INSERT INTO kamar (nomor_kamar,tipe_kamar,kapasitas,status) VALUES ('" & TextBox1.Text & "', '" & ComboBox1.Text & "', '" & TextBox3.Text & "','status')"
                     CMD = New OdbcCommand(InputData, Conn)
                     CMD.ExecuteNonQuery()

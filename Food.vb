@@ -73,6 +73,10 @@ Public Class Food
         Ds = New DataSet
         Da.Fill(Ds, "pesanan")
         DataGridView1.DataSource = Ds.Tables("pesanan")
+        Label8.Visible = False
+        Label9.Visible = False
+        Label10.Visible = False
+        DateTimePicker1.Visible = False
     End Sub
     Sub Disable()
         ComboBox1.Enabled = False

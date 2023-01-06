@@ -53,8 +53,9 @@ Partial Class CheckOut
         Me.Label20 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrasiHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,11 +82,11 @@ Partial Class CheckOut
         Me.Label24 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.MenuUtamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -290,9 +291,10 @@ Partial Class CheckOut
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(306, 80)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(163, 20)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(24, 20)
         Me.DateTimePicker1.TabIndex = 15
         Me.DateTimePicker1.Value = New Date(2022, 12, 29, 14, 22, 52, 0)
+        Me.DateTimePicker1.Visible = False
         '
         'Label15
         '
@@ -378,21 +380,27 @@ Partial Class CheckOut
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
-        'LogoutToolStripMenuItem
+        'MenuUtamaToolStripMenuItem
         '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
+        Me.MenuUtamaToolStripMenuItem.Name = "MenuUtamaToolStripMenuItem"
+        Me.MenuUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.MenuUtamaToolStripMenuItem.Text = "Halaman Utama"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(109, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(157, 6)
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'AdministrasiHotelToolStripMenuItem
@@ -477,39 +485,40 @@ Partial Class CheckOut
         'CheckInToolStripMenuItem
         '
         Me.CheckInToolStripMenuItem.Name = "CheckInToolStripMenuItem"
-        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.CheckInToolStripMenuItem.Text = "Check In"
         '
         'CheckOutToolStripMenuItem
         '
         Me.CheckOutToolStripMenuItem.Name = "CheckOutToolStripMenuItem"
-        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.CheckOutToolStripMenuItem.Text = "Check Out"
         '
         'TamuInHouseToolStripMenuItem
         '
         Me.TamuInHouseToolStripMenuItem.Name = "TamuInHouseToolStripMenuItem"
-        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.TamuInHouseToolStripMenuItem.Text = "Tamu In House"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(150, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(151, 6)
         '
         'BukuTamuToolStripMenuItem
         '
         Me.BukuTamuToolStripMenuItem.Name = "BukuTamuToolStripMenuItem"
-        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.BukuTamuToolStripMenuItem.Text = "Buku Tamu"
         '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(333, 53)
+        Me.DataGridView2.Location = New System.Drawing.Point(270, 111)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(16, 11)
         Me.DataGridView2.TabIndex = 17
+        Me.DataGridView2.Visible = False
         '
         'GroupBox3
         '
@@ -581,31 +590,6 @@ Partial Class CheckOut
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Pembayaran"
         '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(10, 22)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(34, 13)
-        Me.Label25.TabIndex = 0
-        Me.Label25.Text = "Bayar"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(91, 17)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 1
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(13, 50)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(56, 13)
-        Me.Label26.TabIndex = 2
-        Me.Label26.Text = "Kembalian"
-        '
         'Label27
         '
         Me.Label27.AutoSize = True
@@ -615,17 +599,44 @@ Partial Class CheckOut
         Me.Label27.TabIndex = 3
         Me.Label27.Text = "Label27"
         '
-        'MenuUtamaToolStripMenuItem
+        'Label26
         '
-        Me.MenuUtamaToolStripMenuItem.Name = "MenuUtamaToolStripMenuItem"
-        Me.MenuUtamaToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.MenuUtamaToolStripMenuItem.Text = "Halaman Utama"
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(10, 51)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(56, 13)
+        Me.Label26.TabIndex = 2
+        Me.Label26.Text = "Kembalian"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(91, 17)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 1
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(10, 22)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(34, 13)
+        Me.Label25.TabIndex = 0
+        Me.Label25.Text = "Bayar"
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(307, 51)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(23, 20)
+        Me.DateTimePicker2.TabIndex = 24
         '
         'CheckOut
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(602, 513)
+        Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
@@ -722,4 +733,5 @@ Partial Class CheckOut
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents MenuUtamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
 End Class
