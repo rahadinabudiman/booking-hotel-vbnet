@@ -98,7 +98,6 @@ Public Class CheckIn
         ComboBox1.DisplayMember = "nama_depan_tamu"
         ComboBox1.ValueMember = "id_tamu"
         ComboBox1.Text = "Pilih Nama Tamu"
-        ComboBox1.Col()
     End Sub
     Sub KategoriKamar()
         Call Koneksi()

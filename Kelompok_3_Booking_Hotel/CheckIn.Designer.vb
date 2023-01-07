@@ -345,7 +345,7 @@ Partial Class CheckIn
         Me.DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePicker1.Location = New System.Drawing.Point(338, 36)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(87, 20)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(189, 20)
         Me.DateTimePicker1.TabIndex = 32
         Me.DateTimePicker1.Visible = False
         '

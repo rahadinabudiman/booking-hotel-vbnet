@@ -42,7 +42,6 @@ Partial Class CheckOut
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -87,6 +86,15 @@ Partial Class CheckOut
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,7 +171,7 @@ Partial Class CheckOut
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(250, 28)
+        Me.Label8.Location = New System.Drawing.Point(219, 40)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(39, 13)
         Me.Label8.TabIndex = 7
@@ -254,7 +262,7 @@ Partial Class CheckOut
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(306, 56)
+        Me.Label22.Location = New System.Drawing.Point(306, 63)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(13, 13)
         Me.Label22.TabIndex = 19
@@ -263,7 +271,7 @@ Partial Class CheckOut
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(208, 55)
+        Me.Label21.Location = New System.Drawing.Point(219, 63)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(81, 13)
         Me.Label21.TabIndex = 18
@@ -281,25 +289,16 @@ Partial Class CheckOut
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(230, 85)
+        Me.Label16.Location = New System.Drawing.Point(219, 84)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(70, 13)
         Me.Label16.TabIndex = 16
         Me.Label16.Text = "Jumlah Bayar"
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(306, 80)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(24, 20)
-        Me.DateTimePicker1.TabIndex = 15
-        Me.DateTimePicker1.Value = New Date(2022, 12, 29, 14, 22, 52, 0)
-        Me.DateTimePicker1.Visible = False
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(306, 29)
+        Me.Label15.Location = New System.Drawing.Point(306, 40)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(13, 13)
         Me.Label15.TabIndex = 14
@@ -485,30 +484,30 @@ Partial Class CheckOut
         'CheckInToolStripMenuItem
         '
         Me.CheckInToolStripMenuItem.Name = "CheckInToolStripMenuItem"
-        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.CheckInToolStripMenuItem.Text = "Check In"
         '
         'CheckOutToolStripMenuItem
         '
         Me.CheckOutToolStripMenuItem.Name = "CheckOutToolStripMenuItem"
-        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.CheckOutToolStripMenuItem.Text = "Check Out"
         '
         'TamuInHouseToolStripMenuItem
         '
         Me.TamuInHouseToolStripMenuItem.Name = "TamuInHouseToolStripMenuItem"
-        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.TamuInHouseToolStripMenuItem.Text = "Tamu In House"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(151, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(150, 6)
         '
         'BukuTamuToolStripMenuItem
         '
         Me.BukuTamuToolStripMenuItem.Name = "BukuTamuToolStripMenuItem"
-        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.BukuTamuToolStripMenuItem.Text = "Buku Tamu"
         '
         'DataGridView2
@@ -558,7 +557,10 @@ Partial Class CheckOut
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label35)
+        Me.GroupBox4.Controls.Add(Me.Label34)
         Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Controls.Add(Me.Label32)
         Me.GroupBox4.Controls.Add(Me.Label24)
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.Label22)
@@ -631,11 +633,96 @@ Partial Class CheckOut
         Me.DateTimePicker2.Size = New System.Drawing.Size(23, 20)
         Me.DateTimePicker2.TabIndex = 24
         '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(378, 51)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(45, 13)
+        Me.Label28.TabIndex = 25
+        Me.Label28.Text = "Label28"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(378, 72)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(45, 13)
+        Me.Label29.TabIndex = 26
+        Me.Label29.Text = "Label29"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(307, 77)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(23, 20)
+        Me.DateTimePicker1.TabIndex = 27
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(477, 104)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(45, 13)
+        Me.Label30.TabIndex = 28
+        Me.Label30.Text = "Label30"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(477, 58)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(45, 13)
+        Me.Label31.TabIndex = 29
+        Me.Label31.Text = "Label31"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(306, 16)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(13, 13)
+        Me.Label32.TabIndex = 30
+        Me.Label32.Text = "0"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(219, 16)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(68, 13)
+        Me.Label34.TabIndex = 31
+        Me.Label34.Text = "Waktu Lebih"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(351, 112)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(45, 13)
+        Me.Label33.TabIndex = 30
+        Me.Label33.Text = "Label33"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(325, 17)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(26, 13)
+        Me.Label35.TabIndex = 32
+        Me.Label35.Text = "Hari"
+        '
         'CheckOut
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(602, 513)
+        Me.Controls.Add(Me.Label33)
+        Me.Controls.Add(Me.Label31)
+        Me.Controls.Add(Me.Label30)
+        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.Label29)
+        Me.Controls.Add(Me.Label28)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
@@ -643,7 +730,6 @@ Partial Class CheckOut
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.DataGridView1)
@@ -688,7 +774,6 @@ Partial Class CheckOut
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label17 As System.Windows.Forms.Label
@@ -734,4 +819,13 @@ Partial Class CheckOut
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents MenuUtamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents Label35 As System.Windows.Forms.Label
 End Class

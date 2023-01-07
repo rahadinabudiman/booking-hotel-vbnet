@@ -110,6 +110,9 @@ Public Class CheckOut
         Label19.Visible = False
         Label20.Visible = False
         DateTimePicker2.Visible = False
+        Label32.Visible = False
+        Label34.Visible = False
+        Label35.Visible = False
     End Sub
     Sub TotalPesanan()
         Dim id_tamu, totalharga As Integer
@@ -128,25 +131,26 @@ Public Class CheckOut
         Label22.Text = totalharga
     End Sub
     Sub HargaAkhir()
-        If Label22.Text > 0 Then
-            Label17.Text = Val(Label22.Text) + Val(Label15.Text)
-        End If
+
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         TextBox1.Enabled = True
         Button2.Enabled = True
         Call TotalPesanan()
-        Call HargaAkhir()
         Dim id_tamu As Integer
-        Dim Panggil_Pesan_Kamar As String
+        Dim Panggil_Pesan_Kamar, TglSaya As String
         Call Koneksi()
         id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
         Panggil_Pesan_Kamar = "SELECT id_pesan_kamar FROM pesan_kamar WHERE id_tamu ='" & id_tamu & "'"
-        CMD = New OdbcCommand("SELECT ps.tanggal_masuk, ps.jam_masuk, ps.jumlah_deposit, ps.id_pesan_kamar, ps.harga_awal, ps.tipe_kamar, t.id_tamu, t.nama_depan_tamu, k.id_kamar, k.nomor_kamar, ps.id_kamar, ps.id_tamu FROM pesan_kamar as ps INNER JOIN tamu as t ON ps.id_tamu=t.id_tamu INNER JOIN kamar as k ON ps.id_kamar=k.id_kamar WHERE status_pesan=0 AND ps.id_tamu='" & id_tamu & "'", Conn)
+        CMD = New OdbcCommand("SELECT ps.lama_pesan, ps.tanggal_masuk, ps.jam_masuk, ps.jumlah_deposit, ps.id_pesan_kamar, ps.harga_awal, ps.tipe_kamar, t.id_tamu, t.nama_depan_tamu, k.id_kamar, k.nomor_kamar, ps.id_kamar, ps.id_tamu FROM pesan_kamar as ps INNER JOIN tamu as t ON ps.id_tamu=t.id_tamu INNER JOIN kamar as k ON ps.id_kamar=k.id_kamar WHERE status_pesan=0 AND ps.id_tamu='" & id_tamu & "'", Conn)
         Rd = CMD.ExecuteReader
         Rd.Read()
         If Rd.HasRows Then
             DateTimePicker2.Text = Rd.Item("tanggal_masuk")
+            Label11.Text = Format(Rd.Item("tanggal_masuk"), "dd/MM/yyyy")
+            Label29.Text = Format(Rd.Item("tanggal_masuk"), "dd/MM/yyyy")
+            Label31.Text = Rd.Item("lama_pesan")
+            Label12.Text = Rd.Item("jam_masuk").ToString
             Label9.Text = Rd.Item("tipe_kamar")
             Label10.Text = Rd.Item("nomor_kamar")
             Label13.Text = Rd.Item("harga_awal")
@@ -158,9 +162,31 @@ Public Class CheckOut
             MsgBox("Data Tidak Ada")
         End If
         Label24.Text = Val(Label13.Text) - Val(Label14.Text)
+        CMD = New OdbcCommand("SELECT harga_kamar FROM kategori_kamar WHERE tipe_kamar='" & Label9.Text & "'", Conn)
+        Da = New OdbcDataAdapter(CMD)
+        Dt = New DataTable
+        Da.Fill(Dt)
+        Label33.DataBindings.Add("Text", Dt, "harga_kamar")
+
         Call KondisiAwal()
         Call NampilkanDataMakanan()
-        Label11.Text = DateTimePicker2.Text
+        Label28.Text = Format(Now, "dd/MM/yyyy")
+        Dim TanggalAwal As DateTime = Label29.Text
+        Dim TanggalAkhir As DateTime = Label28.Text
+        Label30.Text = (TanggalAkhir - TanggalAwal).Days
+        If Val(Label30.Text) > Val(Label31.Text) Then
+            Label32.Visible = True
+            Label34.Visible = True
+            Label35.Visible = True
+            Label32.Text = Val(Label30.Text) - Val(Label31.Text)
+            Label15.Text = Val(Label33.Text) * Val(Label32.Text)
+        Else
+            Label32.Visible = True
+            Label34.Visible = True
+            Label35.Visible = True
+            Label32.Text = "Tidak lewat"
+        End If
+        Label17.Text = Val(Label22.Text) + Val(Label15.Text)
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
