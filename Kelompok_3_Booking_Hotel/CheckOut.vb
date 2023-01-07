@@ -1,7 +1,6 @@
 ﻿Imports System.Data.Odbc
 Public Class CheckOut
     Sub ResetAll()
-        Button1.Enabled = False
         Button2.Enabled = False
         Label9.Text = ""
         Label10.Text = ""
@@ -66,6 +65,30 @@ Public Class CheckOut
         DataGridView2.Visible = False
         Call NamaTamu()
         Call ListBoxMakanan()
+        Label28.Text = ""
+        Label29.Text = ""
+        Label30.Text = ""
+        Label31.Text = ""
+        Label32.Text = 0
+        Label15.Text = 0
+        Label33.Text = ""
+        Button1.Enabled = True
+        Label18.Visible = False
+        Label19.Visible = False
+        Label20.Visible = False
+        DateTimePicker1.Visible = False
+        DateTimePicker2.Visible = False
+        Label32.Visible = False
+        Label34.Visible = False
+        Label35.Visible = False
+        Label28.Visible = False
+        Label29.Visible = False
+        Label30.Visible = False
+        Label31.Visible = False
+        Label33.Visible = False
+        ComboBox1.Enabled = True
+        Button1.Enabled = True
+        Call ResetAll()
     End Sub
     Sub NamaTamu()
         Call Koneksi()
@@ -104,19 +127,6 @@ Public Class CheckOut
         Call KondisiAwal()
         Call ListBoxMakanan()
         Call ResetAll()
-        Label18.Visible = False
-        Label19.Visible = False
-        Label20.Visible = False
-        DateTimePicker1.Visible = False
-        DateTimePicker2.Visible = False
-        Label32.Visible = False
-        Label34.Visible = False
-        Label35.Visible = False
-        Label28.Visible = False
-        Label29.Visible = False
-        Label30.Visible = False
-        Label31.Visible = False
-        Label33.Visible = False
     End Sub
     Sub TotalPesanan()
         Dim id_tamu, totalharga As Integer
@@ -138,6 +148,10 @@ Public Class CheckOut
 
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Button1.Enabled = False
+        Button2.Enabled = True
+        Button3.Text = "Batal"
+        ComboBox1.Enabled = False
         ListView1.Items.Clear()
         TextBox1.Enabled = True
         Button2.Enabled = True
@@ -183,6 +197,10 @@ Public Class CheckOut
             Label35.Visible = True
             Label32.Text = Val(Label30.Text) - Val(Label31.Text)
             Label15.Text = Val(Label33.Text) * Val(Label32.Text)
+        Else
+            Label32.Visible = False
+            Label34.Visible = False
+            Label35.Visible = False
         End If
         Label17.Text = Val(Label22.Text) + Val(Label15.Text)
         Call NampilkanDataMakanan()
@@ -240,7 +258,13 @@ Public Class CheckOut
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Me.Close()
-        Login.Close()
+        If Button3.Text = "Batal" Then
+            Call KondisiAwal()
+            Button3.Text = "Close"
+            ListView1.Items.Clear()
+        Else
+            Me.Close()
+            Login.Close()
+        End If
     End Sub
 End Class
