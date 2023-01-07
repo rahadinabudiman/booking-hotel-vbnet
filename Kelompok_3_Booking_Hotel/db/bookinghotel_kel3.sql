@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2023 at 06:22 PM
+-- Generation Time: Jan 07, 2023 at 05:37 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -41,9 +41,10 @@ CREATE TABLE `kamar` (
 
 INSERT INTO `kamar` (`id_kamar`, `nomor_kamar`, `tipe_kamar`, `kapasitas`, `status`) VALUES
 (2, 123, 'GEGE', '20', 0),
-(3, 2001, 'DEBES', '1', 1),
-(4, 101, 'GEGE', '1', 1),
-(5, 1002, 'PERFECTOR', '3', 1);
+(3, 2001, 'DEBES', '1', 0),
+(4, 101, 'GEGE', '1', 0),
+(5, 1002, 'PERFECTOR', '3', 0),
+(6, 2121, 'PERFECTOR', '10', 0);
 
 -- --------------------------------------------------------
 
@@ -54,6 +55,7 @@ INSERT INTO `kamar` (`id_kamar`, `nomor_kamar`, `tipe_kamar`, `kapasitas`, `stat
 CREATE TABLE `kategori_kamar` (
   `id_kategori_kamar` int(11) NOT NULL,
   `tipe_kamar` varchar(10) DEFAULT NULL,
+  `kapasitas` int(5) NOT NULL,
   `harga_kamar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,10 +63,10 @@ CREATE TABLE `kategori_kamar` (
 -- Dumping data for table `kategori_kamar`
 --
 
-INSERT INTO `kategori_kamar` (`id_kategori_kamar`, `tipe_kamar`, `harga_kamar`) VALUES
-(2, 'PERFECTOR', 100),
-(3, 'DEBES', 2000),
-(4, 'GEGE', 50000);
+INSERT INTO `kategori_kamar` (`id_kategori_kamar`, `tipe_kamar`, `kapasitas`, `harga_kamar`) VALUES
+(2, 'PERFECTOR', 10, 100),
+(3, 'DEBES', 20, 2000),
+(4, 'GEGE', 30, 50000);
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,11 @@ CREATE TABLE `layanan` (
 
 INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `kategori`, `harga`) VALUES
 (1, 'Pisang Keju', 'Makanan', 5000),
-(2, 'Martabak', 'Makanan', 15000);
+(2, 'Martabak', 'Makanan', 15000),
+(3, 'Bantal', 'Room', 15000),
+(4, 'Selimut', 'Room', 30000),
+(5, 'Es Jeruk', 'Minuman', 10000),
+(6, 'Lemon Tea', 'Minuman', 15000);
 
 -- --------------------------------------------------------
 
@@ -131,15 +137,6 @@ CREATE TABLE `pesanan` (
   `waktu_bayar` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `pesanan`
---
-
-INSERT INTO `pesanan` (`id_pesanan`, `id_pesan_kamar`, `id_tamu`, `id_layanan`, `nama_layanan`, `banyak_pesanan`, `total_harga`, `status_pesanan`, `tanggal_pesan`, `waktu_pesan`, `tanggal_bayar`, `waktu_bayar`) VALUES
-(2, 20, 13, 1, 'Pisang Keju', 5, 25000, 1, '2022-12-30', '23:55:15', '2022-12-29', '12:04:20'),
-(3, 20, 13, 2, 'Martabak', 3, 45000, 1, '2022-12-31', '00:03:23', '2022-12-29', '12:04:20'),
-(4, 22, 13, 1, 'Pisang Keju', 10, 50000, 1, '2022-12-31', '12:18:57', '2022-12-29', '12:20:04');
-
 -- --------------------------------------------------------
 
 --
@@ -164,19 +161,6 @@ CREATE TABLE `pesan_kamar` (
   `harga_akhir` int(10) NOT NULL,
   `status_pesan` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pesan_kamar`
---
-
-INSERT INTO `pesan_kamar` (`id_pesan_kamar`, `invoice`, `id_tamu`, `jumlah_tamu`, `id_kamar`, `tipe_kamar`, `harga_awal`, `tanggal_masuk`, `jam_masuk`, `lama_pesan`, `tanggal_keluar`, `jam_keluar`, `jumlah_deposit`, `denda`, `harga_akhir`, `status_pesan`) VALUES
-(19, 'wwcRN', 13, 3, 3, 'DEBES', 174000, '2022-12-30', '09:44:32', 12, '2022-12-29', '09:44:54', 0, 0, 0, 1),
-(20, 'zIkNJ', 13, 3, 5, 'PERFECTOR', 150500, '2022-12-30', '19:46:06', 5, '2022-12-29', '12:04:20', 0, 0, 70000, 1),
-(21, 'qLnL1', 14, 3, 3, 'DEBES', 156000, '2022-12-30', '20:14:51', 3, '2022-12-29', '12:02:04', 0, 0, 0, 1),
-(22, '4FwWR', 13, 35, 4, 'GEGE', 250000, '2022-12-31', '12:12:29', 2, '2022-12-29', '12:20:04', 0, 0, 50000, 1),
-(23, 'vvHqF', 13, 3, 5, 'PERFECTOR', 150500, '2023-01-04', '23:42:46', 5, NULL, NULL, 150000, 0, 0, 0),
-(24, 'aUHIw', 14, 3, 3, 'DEBES', 152000, '2023-01-04', '23:44:24', 1, NULL, NULL, 150000, 0, 0, 0),
-(25, 'rbCc9', 15, 1, 4, 'GEGE', 200000, '2023-01-07', '00:21:31', 1, NULL, NULL, 150000, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -205,10 +189,7 @@ CREATE TABLE `tamu` (
 --
 
 INSERT INTO `tamu` (`id_tamu`, `nama_depan_tamu`, `nama_belakang_tamu`, `panggilan_tamu`, `identitas_tamu`, `nomor_identitas`, `warga_negara`, `alamat_tinggal`, `kota`, `provinsi`, `nomor_hp`, `email`, `status`) VALUES
-(13, 'RAHADINA', 'BUDIMAN', 'Mr.', 'KTP', '2020', 'WNI', '1212', '1212', '1212', '8023', '0823', 1),
-(14, 'k', 'k', 'Mr.', 'KTP', 'k', 'WNI', 'k', 'k', 'k', 'k', 'k', 1),
-(15, 'k', 'k', 'Mr.', 'KTP', 'k', 'WNI', 'k', 'k', 'k', 'k', 'k', 1),
-(16, 'z', 'z', 'Mr.', 'KTP', 'z', 'WNI', 'z', 'z', 'z', 'z', 'z', 0);
+(13, 'RAHADINA', 'BUDIMAN', 'Mr.', 'KTP', '2020', 'WNI', '1212', '1212', '1212', '8023', '0823', 0);
 
 --
 -- Indexes for dumped tables
@@ -264,7 +245,7 @@ ALTER TABLE `tamu`
 -- AUTO_INCREMENT for table `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `kategori_kamar`
@@ -276,7 +257,7 @@ ALTER TABLE `kategori_kamar`
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -288,7 +269,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pesan_kamar`

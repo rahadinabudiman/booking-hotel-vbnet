@@ -63,10 +63,16 @@ Partial Class MenuUtama
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.RoomServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -152,7 +158,7 @@ Partial Class MenuUtama
         '
         'RoomServicesToolStripMenuItem
         '
-        Me.RoomServicesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FoodToolStripMenuItem, Me.DrinkToolStripMenuItem, Me.LaundryToolStripMenuItem, Me.ToolStripSeparator3, Me.PembersihanKamarToolStripMenuItem})
+        Me.RoomServicesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FoodToolStripMenuItem, Me.DrinkToolStripMenuItem, Me.LaundryToolStripMenuItem, Me.RoomServicesToolStripMenuItem1, Me.ToolStripSeparator3, Me.PembersihanKamarToolStripMenuItem})
         Me.RoomServicesToolStripMenuItem.Name = "RoomServicesToolStripMenuItem"
         Me.RoomServicesToolStripMenuItem.Size = New System.Drawing.Size(96, 20)
         Me.RoomServicesToolStripMenuItem.Text = "Room Services"
@@ -269,6 +275,8 @@ Partial Class MenuUtama
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label3)
@@ -282,7 +290,7 @@ Partial Class MenuUtama
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(85, 36)
+        Me.Label6.Location = New System.Drawing.Point(63, 36)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(39, 13)
         Me.Label6.TabIndex = 6
@@ -291,7 +299,7 @@ Partial Class MenuUtama
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(40, 51)
+        Me.Label5.Location = New System.Drawing.Point(46, 51)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 13)
         Me.Label5.TabIndex = 5
@@ -300,7 +308,7 @@ Partial Class MenuUtama
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(40, 26)
+        Me.Label3.Location = New System.Drawing.Point(46, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 4
@@ -354,11 +362,55 @@ Partial Class MenuUtama
         'Timer1
         '
         '
+        'RoomServicesToolStripMenuItem1
+        '
+        Me.RoomServicesToolStripMenuItem1.Name = "RoomServicesToolStripMenuItem1"
+        Me.RoomServicesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.RoomServicesToolStripMenuItem1.Text = "Room Services"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Location = New System.Drawing.Point(327, 87)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(188, 55)
+        Me.GroupBox3.TabIndex = 13
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Kamar Kotor"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(18, 27)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(45, 13)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Label12"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 23)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(34, 13)
+        Me.Label13.TabIndex = 7
+        Me.Label13.Text = "Tipe :"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 51)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(44, 13)
+        Me.Label14.TabIndex = 8
+        Me.Label14.Text = "Nomor :"
+        '
         'MenuUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 326)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -380,6 +432,8 @@ Partial Class MenuUtama
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -424,4 +478,9 @@ Partial Class MenuUtama
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents TambahAdminToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RoomServicesToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class

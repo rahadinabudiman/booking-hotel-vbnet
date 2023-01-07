@@ -109,6 +109,12 @@
     <Compile Include="CheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Drink.Designer.vb">
+      <DependentUpon>Drink.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Drink.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Food.Designer.vb">
       <DependentUpon>Food.vb</DependentUpon>
     </Compile>
@@ -167,6 +173,12 @@
     <Compile Include="PembersihanKamar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RoomServices.Designer.vb">
+      <DependentUpon>RoomServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RoomServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TambahAdmin.Designer.vb">
       <DependentUpon>TambahAdmin.vb</DependentUpon>
     </Compile>
@@ -192,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckOut.resx">
       <DependentUpon>CheckOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drink.resx">
+      <DependentUpon>Drink.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Food.resx">
       <DependentUpon>Food.vb</DependentUpon>
@@ -219,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PembersihanKamar.resx">
       <DependentUpon>PembersihanKamar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomServices.resx">
+      <DependentUpon>RoomServices.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TambahAdmin.resx">
       <DependentUpon>TambahAdmin.vb</DependentUpon>

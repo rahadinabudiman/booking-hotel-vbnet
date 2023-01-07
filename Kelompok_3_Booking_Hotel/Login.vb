@@ -12,7 +12,9 @@ Public Class Login
                 Me.Hide()
                 MenuUtama.Label2.Text = Rd.Item("nama_admin")
                 MenuUtama.Label7.Text = Rd.Item("tipe_administrator")
-                If MenuUtama.Label7.Text = "Super Administrator" Then
+                Label5.Text = Rd.Item("nama_admin")
+                Label6.Text = Rd.Item("tipe_administrator")
+                If Label6.Text = "Super Administrator" Then
                     MenuUtama.KamarToolStripMenuItem.Enabled = True
                     MenuUtama.LayananToolStripMenuItem.Enabled = True
                     MenuUtama.LaporanToolStripMenuItem.Enabled = True
@@ -36,6 +38,7 @@ Public Class Login
 
     Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TextBox2.PasswordChar = "*"
+        Label6.Visible = False
         Call Koneksi()
         If Conn.State = ConnectionState.Open Then
             Label4.Text = "Connect"

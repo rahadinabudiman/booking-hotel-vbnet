@@ -300,30 +300,30 @@ Partial Class Food
         'CheckInToolStripMenuItem
         '
         Me.CheckInToolStripMenuItem.Name = "CheckInToolStripMenuItem"
-        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.CheckInToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.CheckInToolStripMenuItem.Text = "Check In"
         '
         'CheckOutToolStripMenuItem
         '
         Me.CheckOutToolStripMenuItem.Name = "CheckOutToolStripMenuItem"
-        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.CheckOutToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.CheckOutToolStripMenuItem.Text = "Check Out"
         '
         'TamuInHouseToolStripMenuItem
         '
         Me.TamuInHouseToolStripMenuItem.Name = "TamuInHouseToolStripMenuItem"
-        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.TamuInHouseToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.TamuInHouseToolStripMenuItem.Text = "Tamu In House"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(151, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(150, 6)
         '
         'BukuTamuToolStripMenuItem
         '
         Me.BukuTamuToolStripMenuItem.Name = "BukuTamuToolStripMenuItem"
-        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.BukuTamuToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.BukuTamuToolStripMenuItem.Text = "Buku Tamu"
         '
         'Button2

@@ -96,7 +96,7 @@ Public Class MenuUtama
         AdministrasiHotelToolStripMenuItem.Enabled = False
     End Sub
     Sub Terbuka()
-        If Label7.Text = "2" Then
+        If Login.Label6.Text = "Super Administrator" Then
             KamarToolStripMenuItem.Enabled = True
             LayananToolStripMenuItem.Enabled = True
             LaporanToolStripMenuItem.Enabled = True
@@ -124,6 +124,9 @@ Public Class MenuUtama
         Call Terbuka()
         Label9.Text = Today
         Timer1.Enabled = True
+        Label7.Visible = False
+        Call StatusKotorKamar()
+        Label2.Text = Login.Label5.Text
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
@@ -133,5 +136,27 @@ Public Class MenuUtama
     Private Sub TambahAdminToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TambahAdminToolStripMenuItem.Click
         TambahAdmin.Show()
         Me.Close()
+    End Sub
+
+    Private Sub RoomServicesToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RoomServicesToolStripMenuItem1.Click
+        Me.Close()
+        RoomServices.Show()
+    End Sub
+    Sub StatusKotorKamar()
+        Call Koneksi()
+        CMD = New OdbcCommand("SELECT * FROM kamar WHERE status=2", Conn)
+        Da = New OdbcDataAdapter(CMD)
+        Dt = New DataTable
+        Da.Fill(Dt)
+        If Dt.Rows.Count > 0 Then
+            Label12.Text = "Ada Kamar Kotor (Checkout)"
+        Else
+            Label12.Text = "Tidak Ada Kamar Kotor (Checkout)"
+        End If
+    End Sub
+
+    Private Sub DrinkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DrinkToolStripMenuItem.Click
+        Me.Close()
+        Drink.Show()
     End Sub
 End Class

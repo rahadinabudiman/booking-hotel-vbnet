@@ -113,7 +113,7 @@ Partial Class Layanan
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Makanan", "Minuman", "Jasa"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Makanan", "Minuman", "Jasa", "Room"})
         Me.ComboBox1.Location = New System.Drawing.Point(121, 79)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(100, 21)

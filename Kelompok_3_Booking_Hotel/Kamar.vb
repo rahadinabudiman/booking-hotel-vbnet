@@ -164,7 +164,7 @@ Public Class Kamar
     End Sub
     Sub Tipe_Kamar()
         Call Koneksi()
-        CMD = New OdbcCommand("SELECT tipe_kamar,harga_kamar FROM kategori_kamar", Conn)
+        CMD = New OdbcCommand("SELECT tipe_kamar,harga_kamar, kapasitas FROM kategori_kamar", Conn)
         Da = New OdbcDataAdapter(CMD)
         Dt = New DataTable
         Da.Fill(Dt)
@@ -173,11 +173,13 @@ Public Class Kamar
         ComboBox1.ValueMember = "harga_kamar"
         ComboBox1.Text = "Pilih Tipe Kamar"
         Label6.Text = "0"
+        TextBox3.DataBindings.Add("Text", Dt, "kapasitas")
     End Sub
 
     Private Sub Kamar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call KondisiAwal()
         Call Tipe_Kamar()
+        TextBox3.ReadOnly = True
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
