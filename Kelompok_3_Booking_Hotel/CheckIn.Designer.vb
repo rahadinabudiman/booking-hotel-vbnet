@@ -543,9 +543,8 @@ Partial Class CheckIn
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(309, 154)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(13, 13)
+        Me.Label20.Size = New System.Drawing.Size(0, 13)
         Me.Label20.TabIndex = 39
-        Me.Label20.Text = "0"
         '
         'Label21
         '

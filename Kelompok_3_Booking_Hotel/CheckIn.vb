@@ -84,6 +84,9 @@ Public Class CheckIn
         Da.Fill(Ds, "pesan_kamar")
         DataGridView1.DataSource = Ds.Tables("pesan_kamar")
         Button1.Text = "Input"
+        Call NamaTamu()
+        Call KategoriKamar()
+        Call NomorKamar()
     End Sub
     Sub NamaTamu()
         Call Koneksi()
@@ -93,8 +96,9 @@ Public Class CheckIn
         Da.Fill(Dt)
         ComboBox1.DataSource = Dt
         ComboBox1.DisplayMember = "nama_depan_tamu"
-        ComboBox1.ValueMember = "id_Tamu"
+        ComboBox1.ValueMember = "id_tamu"
         ComboBox1.Text = "Pilih Nama Tamu"
+        ComboBox1.Col()
     End Sub
     Sub KategoriKamar()
         Call Koneksi()
@@ -128,7 +132,17 @@ Public Class CheckIn
         Label16.Visible = False
         Label17.Visible = False
     End Sub
-
+    Private Sub ComboBox3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox3.SelectedIndexChanged
+        Call Koneksi()
+        Dim id_kamar As Integer
+        id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
+        CMD = New OdbcCommand("SELECT kapasitas FROM kamar WHERE id_kamar='" & id_kamar & "'", Conn)
+        Rd = CMD.ExecuteReader
+        Rd.Read()
+        If Rd.HasRows Then
+            Label20.Text = Rd.Item("kapasitas")
+        End If
+    End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         If Button1.Text = "Input" Then
             Button1.Text = "Simpan"
@@ -140,15 +154,14 @@ Public Class CheckIn
             If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox5.Text = "" Or TextBox6.Text = "" Or TextBox7.Text = "" Or ComboBox1.Text = "" Or ComboBox2.Text = "" Or ComboBox3.Text = "" Then
                 MsgBox("Data tidak boleh kosong")
             Else
-                If TextBox1.Text > Label20.Text Then
+                If Val(TextBox1.Text) > Val(Label20.Text) Then
                     MsgBox("Jumlah orang melebihi kapasitas")
                 Else
-
                     If TextBox7.Text < 0 Then
                         MsgBox("Uang tidak mencukupi")
                     Else
                         Call Koneksi()
-                        Dim InputData, CheckData, GantiStatusKamar, GantiStatusTamu As String
+                        Dim InputData, GantiStatusKamar, GantiStatusTamu As String
                         Dim id_tamu, id_kamar, status_pesan, status_kamar, status_tamu As Integer
                         id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
                         id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
@@ -323,17 +336,5 @@ Public Class CheckIn
     Private Sub HalamanUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HalamanUtamaToolStripMenuItem.Click
         Me.Close()
         MenuUtama.Show()
-    End Sub
-
-    Private Sub ComboBox3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox3.SelectedIndexChanged
-        Call Koneksi()
-        Dim id_kamar As Integer
-        id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
-        CMD = New OdbcCommand("SELECT kapasitas FROM kamar WHERE id_kamar='" & id_kamar & "'", Conn)
-        Rd = CMD.ExecuteReader
-        Rd.Read()
-        If Rd.HasRows Then
-            Label20.Text = Rd.Item("kapasitas")
-        End If
     End Sub
 End Class

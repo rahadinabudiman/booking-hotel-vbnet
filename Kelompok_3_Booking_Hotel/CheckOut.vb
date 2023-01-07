@@ -65,6 +65,8 @@ Public Class CheckOut
         DataGridView1.DataSource = Ds.Tables("pesan_kamar")
         DataGridView2.Visible = False
         ListView1.Items.Clear()
+        Call NamaTamu()
+        Call ListBoxMakanan()
     End Sub
     Sub NamaTamu()
         Call Koneksi()

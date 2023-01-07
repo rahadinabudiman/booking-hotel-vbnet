@@ -40,6 +40,7 @@ Partial Class MenuUtama
         Me.FoodToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DrinkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaundryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RoomServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.PembersihanKamarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProsesHotelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,6 +55,8 @@ Partial Class MenuUtama
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -63,11 +66,8 @@ Partial Class MenuUtama
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.RoomServicesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -181,6 +181,12 @@ Partial Class MenuUtama
         Me.LaundryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LaundryToolStripMenuItem.Text = "Laundry"
         '
+        'RoomServicesToolStripMenuItem1
+        '
+        Me.RoomServicesToolStripMenuItem1.Name = "RoomServicesToolStripMenuItem1"
+        Me.RoomServicesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.RoomServicesToolStripMenuItem1.Text = "Room Services"
+        '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
@@ -287,6 +293,24 @@ Partial Class MenuUtama
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Last Reservation"
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 51)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(44, 13)
+        Me.Label14.TabIndex = 8
+        Me.Label14.Text = "Nomor :"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 23)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(34, 13)
+        Me.Label13.TabIndex = 7
+        Me.Label13.Text = "Tipe :"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -362,12 +386,6 @@ Partial Class MenuUtama
         'Timer1
         '
         '
-        'RoomServicesToolStripMenuItem1
-        '
-        Me.RoomServicesToolStripMenuItem1.Name = "RoomServicesToolStripMenuItem1"
-        Me.RoomServicesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.RoomServicesToolStripMenuItem1.Text = "Room Services"
-        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label12)
@@ -381,29 +399,11 @@ Partial Class MenuUtama
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(18, 27)
+        Me.Label12.Location = New System.Drawing.Point(6, 27)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(45, 13)
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "Label12"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 23)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(34, 13)
-        Me.Label13.TabIndex = 7
-        Me.Label13.Text = "Tipe :"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 51)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(44, 13)
-        Me.Label14.TabIndex = 8
-        Me.Label14.Text = "Nomor :"
         '
         'MenuUtama
         '

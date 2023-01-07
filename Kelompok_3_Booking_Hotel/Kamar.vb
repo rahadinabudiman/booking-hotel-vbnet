@@ -154,7 +154,7 @@ Public Class Kamar
             MsgBox("Data tidak boleh kosong")
         Else
             Call Koneksi()
-            Dim HapusData, CheckData As String
+            Dim HapusData As String
             HapusData = "DELETE FROM kamar WHERE id_kamar = '" & Label5.Text & "'"
             CMD = New OdbcCommand(HapusData, Conn)
             CMD.ExecuteNonQuery()

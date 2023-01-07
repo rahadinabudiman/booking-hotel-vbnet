@@ -38,6 +38,7 @@ Public Class Kategori_Kamar
     Sub KondisiAwal()
         TextBox1.Enabled = False
         TextBox2.Enabled = False
+        TextBox3.Enabled = False
         TextBox1.Text = ""
         TextBox2.Text = ""
         Button1.Text = "Input"
@@ -56,6 +57,7 @@ Public Class Kategori_Kamar
     Sub FieldAktif()
         TextBox1.Enabled = True
         TextBox2.Enabled = True
+        TextBox3.Enabled = True
     End Sub
 
     Private Sub Kategori_Kamar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -74,8 +76,8 @@ Public Class Kategori_Kamar
                 MsgBox("Data tidak boleh kosong")
             Else
                 Call Koneksi()
-                Dim InputData, CheckData As String
-                InputData = "INSERT INTO kategori_kamar (tipe_kamar,harga_kamar) VALUES ('" & TextBox1.Text & "', '" & TextBox2.Text & "')"
+                Dim InputData As String
+                InputData = "INSERT INTO kategori_kamar (tipe_kamar,harga_kamar,kapasitas) VALUES ('" & TextBox1.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "')"
                 CMD = New OdbcCommand(InputData, Conn)
                 CMD.ExecuteNonQuery()
                 MsgBox("Berhasil input Data")
@@ -96,7 +98,8 @@ Public Class Kategori_Kamar
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Label3.Text = DataGridView1.CurrentRow.Cells(0).Value
         TextBox1.Text = DataGridView1.CurrentRow.Cells(1).Value
-        TextBox2.Text = DataGridView1.CurrentRow.Cells(2).Value
+        TextBox2.Text = DataGridView1.CurrentRow.Cells(3).Value
+        TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value
         Call FieldAktif()
         Button1.Enabled = False
         Label3.Visible = False
@@ -108,7 +111,7 @@ Public Class Kategori_Kamar
         Else
             Call Koneksi()
             Dim UpdateData, CheckData As String
-            UpdateData = "UPDATE kategori_kamar SET  tipe_kamar='" & TextBox1.Text & "', harga_kamar='" & TextBox2.Text & "' WHERE id_kategori_kamar = '" & Label3.Text & "'"
+            UpdateData = "UPDATE kategori_kamar SET  tipe_kamar='" & TextBox1.Text & "', harga_kamar='" & TextBox2.Text & "', kapasitas='" & TextBox3.Text & "' WHERE id_kategori_kamar = '" & Label3.Text & "'"
             CMD = New OdbcCommand(UpdateData, Conn)
             CMD.ExecuteNonQuery()
             MsgBox("Berhasil Ubah Data")

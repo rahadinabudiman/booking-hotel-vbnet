@@ -59,6 +59,7 @@ Public Class Tamu
 
     Private Sub Tamu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call KondisiAwal()
+        Label12.Visible = False
     End Sub
 
     Sub KondisiAwal()
@@ -124,20 +125,28 @@ Public Class Tamu
             Button3.Text = "Batal"
             Call FieldAktif()
         Else
+            CMD = New OdbcCommand("SELECT nomor_identitas FROM tamu WHERE nomor_identitas = '" & TextBox1.Text & "' OR nama_depan_tamu ='" & TextBox2.Text & "'", Conn)
+            Da = New OdbcDataAdapter(CMD)
+            Dt = New DataTable
+            Da.Fill(Dt)
+
             Dim status As Integer
             status = 0
-
-            If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox4.Text = "" Or TextBox5.Text = "" Or TextBox6.Text = "" Or TextBox7.Text = "" Or TextBox8.Text = "" Or ComboBox1.Text = "" Or ComboBox2.Text = "" Or ComboBox3.Text = "" Then
-                MsgBox("Data tidak boleh kosong")
+            If Dt.Rows.Count > 0 Then
+                MsgBox("Nama Depan atau Nomor Identitas Sudah Terdaftar")
             Else
-                Call Koneksi()
-                Dim InputData, CheckData As String
-                CheckData = "SELECT * FROM tamu WHERE nomor_identitas = '" & TextBox1.Text & "'"
-                InputData = "INSERT INTO tamu (nama_depan_tamu,nama_belakang_tamu,panggilan_tamu,identitas_tamu,nomor_identitas,warga_negara,alamat_tinggal,kota,provinsi,nomor_hp,email,status) VALUES ('" & TextBox2.Text & "', '" & TextBox3.Text & "','" & ComboBox1.Text & "', '" & ComboBox2.Text & "', '" & TextBox1.Text & "', '" & ComboBox3.Text & "', '" & TextBox6.Text & "', '" & TextBox7.Text & "', '" & TextBox8.Text & "','" & TextBox4.Text & "','" & TextBox5.Text & "','" & status & "')"
-                CMD = New OdbcCommand(InputData, Conn)
-                CMD.ExecuteNonQuery()
-                MsgBox("Berhasil input Data")
-                Call KondisiAwal()
+                If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Or TextBox4.Text = "" Or TextBox5.Text = "" Or TextBox6.Text = "" Or TextBox7.Text = "" Or TextBox8.Text = "" Or ComboBox1.Text = "" Or ComboBox2.Text = "" Or ComboBox3.Text = "" Then
+                    MsgBox("Data tidak boleh kosong")
+                Else
+                    Call Koneksi()
+                    Dim InputData, CheckData As String
+                    CheckData = "SELECT * FROM tamu WHERE nomor_identitas = '" & TextBox1.Text & "'"
+                    InputData = "INSERT INTO tamu (nama_depan_tamu,nama_belakang_tamu,panggilan_tamu,identitas_tamu,nomor_identitas,warga_negara,alamat_tinggal,kota,provinsi,nomor_hp,email,status) VALUES ('" & TextBox2.Text & "', '" & TextBox3.Text & "','" & ComboBox1.Text & "', '" & ComboBox2.Text & "', '" & TextBox1.Text & "', '" & ComboBox3.Text & "', '" & TextBox6.Text & "', '" & TextBox7.Text & "', '" & TextBox8.Text & "','" & TextBox4.Text & "','" & TextBox5.Text & "','" & status & "')"
+                    CMD = New OdbcCommand(InputData, Conn)
+                    CMD.ExecuteNonQuery()
+                    MsgBox("Berhasil input Data")
+                    Call KondisiAwal()
+                End If
             End If
         End If
     End Sub
@@ -148,7 +157,7 @@ Public Class Tamu
         Else
             Call Koneksi()
             Dim EditData As String
-            EditData = "UPDATE tamu SET nama_depan_tamu='" & TextBox2.Text & "', nama_belakang_tamu='" & TextBox3.Text & "',panggilan_tamu='" & ComboBox1.Text & "', identitas_tamu='" & ComboBox2.Text & "', nomor_identitas='" & TextBox1.Text & "', warga_negara='" & ComboBox3.Text & "', alamat_tinggal='" & TextBox6.Text & "', kota='" & TextBox7.Text & "', provinsi='" & TextBox8.Text & "', nomor_hp='" & TextBox4.Text & "', email='" & TextBox5.Text & "'"
+            EditData = "UPDATE tamu SET nama_depan_tamu='" & TextBox2.Text & "', nama_belakang_tamu='" & TextBox3.Text & "',panggilan_tamu='" & ComboBox1.Text & "', identitas_tamu='" & ComboBox2.Text & "', nomor_identitas='" & TextBox1.Text & "', warga_negara='" & ComboBox3.Text & "', alamat_tinggal='" & TextBox6.Text & "', kota='" & TextBox7.Text & "', provinsi='" & TextBox8.Text & "', nomor_hp='" & TextBox4.Text & "', email='" & TextBox5.Text & "' WHERE id_tamu = '" & Label12.Text & "'"
             CMD = New OdbcCommand(EditData, Conn)
             CMD.ExecuteNonQuery()
             MsgBox("Edit Data Behasil")
@@ -193,6 +202,7 @@ Public Class Tamu
             ComboBox1.Text = Rd.Item("panggilan_tamu")
             ComboBox2.Text = Rd.Item("identitas_tamu")
             ComboBox3.Text = Rd.Item("warga_negara")
+            Label12.Text = Rd.Item("id_tamu")
         Else
             MsgBox("Data Tidak Ada")
         End If
@@ -201,6 +211,7 @@ Public Class Tamu
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         TextBox1.Text = DataGridView1.CurrentRow.Cells(5).Value
         TextBox1.ReadOnly = True
+        Label12.Text = DataGridView1.CurrentRow.Cells(0).Value
         TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value
         TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value
         TextBox4.Text = DataGridView1.CurrentRow.Cells(10).Value
