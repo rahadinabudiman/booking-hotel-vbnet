@@ -161,7 +161,8 @@ Public Class CheckIn
                     Else
                         Call Koneksi()
                         Dim InputData, GantiStatusKamar, GantiStatusTamu As String
-                        Dim id_tamu, id_kamar, status_pesan, status_kamar, status_tamu As Integer
+                        Dim id_tamu, id_kamar, status_pesan, status_kamar, status_tamu, id_login As Integer
+                        id_login = Login.Label7.Text
                         id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
                         id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
                         status_pesan = 0
@@ -179,7 +180,7 @@ Public Class CheckIn
                             hasil = hasil & nilai(strpos)
                             Count = Count + 1
                         End While
-                        InputData = "INSERT INTO pesan_kamar (invoice,tipe_kamar,id_tamu,jumlah_tamu,id_kamar,harga_awal,lama_pesan,jumlah_deposit,tanggal_masuk,jam_masuk,status_pesan) VALUES ('" & hasil & "','" & ComboBox2.Text & "','" & id_tamu & "', '" & TextBox1.Text & "','" & id_kamar & "', '" & TextBox5.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TglSaya & "','" & Now.ToLongTimeString & "','status_pesan')"
+                        InputData = "INSERT INTO pesan_kamar (invoice,tipe_kamar,id_tamu,jumlah_tamu,id_kamar,harga_awal,lama_pesan,jumlah_deposit,tanggal_masuk,jam_masuk,status_pesan,id_login) VALUES ('" & hasil & "','" & ComboBox2.Text & "','" & id_tamu & "', '" & TextBox1.Text & "','" & id_kamar & "', '" & TextBox5.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TglSaya & "','" & Now.ToLongTimeString & "','status_pesan','" & id_login & "')"
                         GantiStatusKamar = "UPDATE kamar SET status='" & status_kamar & "' WHERE id_kamar='" & id_kamar & "'"
                         GantiStatusTamu = "UPDATE tamu SET status='" & status_tamu & "' WHERE id_tamu='" & id_tamu & "'"
                         CMD = New OdbcCommand(GantiStatusTamu, Conn)
@@ -295,7 +296,8 @@ Public Class CheckIn
         Else
             Call Koneksi()
             Dim EditData, EditStatusKamar, EditKamarTerpakai As String
-            Dim status_kamar, status_tamu, id_pesan_kamar, id_kamar, kamar_tidak_terpakai, kamar_terpakai As Integer
+            Dim status_kamar, status_tamu, id_pesan_kamar, id_kamar, kamar_tidak_terpakai, kamar_terpakai, id_login As Integer
+            id_login = Login.Label7.Text
             status_kamar = 0
             status_tamu = 0
             kamar_tidak_terpakai = 0
@@ -312,7 +314,7 @@ Public Class CheckIn
 
             Dim TglSaya As String
             TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
-            EditData = "UPDATE pesan_kamar SET jumlah_tamu = '" & TextBox1.Text & "', tipe_kamar ='" & ComboBox2.Text & "', id_kamar ='" & id_kamar & "', lama_pesan ='" & TextBox2.Text & "' , tanggal_masuk ='" & TglSaya & "' , jam_masuk ='" & Now.ToLongTimeString & "' WHERE id_pesan_kamar = '" & id_pesan_kamar & "'"
+            EditData = "UPDATE pesan_kamar SET id_login='" & id_login & "', jumlah_tamu = '" & TextBox1.Text & "', tipe_kamar ='" & ComboBox2.Text & "', id_kamar ='" & id_kamar & "', lama_pesan ='" & TextBox2.Text & "' , tanggal_masuk ='" & TglSaya & "' , jam_masuk ='" & Now.ToLongTimeString & "' WHERE id_pesan_kamar = '" & id_pesan_kamar & "'"
             EditStatusKamar = "UPDATE kamar SET status ='" & kamar_tidak_terpakai & "' WHERE id_kamar = '" & Label17.Text & "'"
             CMD = New OdbcCommand(EditStatusKamar, Conn)
             CMD.ExecuteNonQuery()

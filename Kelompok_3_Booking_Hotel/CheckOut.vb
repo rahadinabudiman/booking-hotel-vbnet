@@ -144,9 +144,6 @@ Public Class CheckOut
         Next
         Label22.Text = totalharga
     End Sub
-    Sub HargaAkhir()
-
-    End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Button1.Enabled = False
         Button2.Enabled = True
@@ -212,12 +209,13 @@ Public Class CheckOut
         Else
             Call Koneksi()
             Dim InputData, CheckData, TglSaya, ganti_status_kamar, ganti_status_tamu, ganti_Status_pesanan As String
-            Dim status_pesan, jumlah_deposit, status_tamu As Integer
+            Dim status_pesan, jumlah_deposit, status_tamu, id_login As Integer
+            id_login = Login.Label7.Text
             status_pesan = 1
             jumlah_deposit = 0
             status_tamu = 0
             TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
-            InputData = "UPDATE pesan_kamar SET tanggal_keluar='" & TglSaya & "', jam_keluar='" & Now.ToLongTimeString & "', denda='" & Label15.Text & "', harga_akhir='" & Label17.Text & "' , status_pesan='" & status_pesan & "' , jumlah_deposit='" & jumlah_deposit & "', denda='" & Label15.Text & "' , harga_akhir='" & Label17.Text & "' WHERE id_pesan_kamar = '" & Label18.Text & "'"
+            InputData = "UPDATE pesan_kamar SET id_login ='" & id_login & "', tanggal_keluar='" & TglSaya & "', jam_keluar='" & Now.ToLongTimeString & "', denda='" & Label15.Text & "', harga_akhir='" & Label17.Text & "' , status_pesan='" & status_pesan & "' , jumlah_deposit='" & jumlah_deposit & "', denda='" & Label15.Text & "' , harga_akhir='" & Label17.Text & "' WHERE id_pesan_kamar = '" & Label18.Text & "'"
             ganti_status_kamar = "UPDATE kamar SET status=2 WHERE id_kamar ='" & Label19.Text & "'"
             ganti_status_tamu = "UPDATE tamu SET status=0 WHERE id_tamu ='" & Label20.Text & "'"
             ganti_Status_pesanan = "UPDATE pesanan SET status_pesanan='1', tanggal_bayar ='" & TglSaya & "', waktu_bayar ='" & Now.ToLongTimeString & "' WHERE id_pesan_kamar = '" & Label18.Text & "' AND id_tamu ='" & Label20.Text & "'"
