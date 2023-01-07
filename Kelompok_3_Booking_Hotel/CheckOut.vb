@@ -64,7 +64,6 @@ Public Class CheckOut
         Da.Fill(Ds, "pesan_kamar")
         DataGridView1.DataSource = Ds.Tables("pesan_kamar")
         DataGridView2.Visible = False
-        ListView1.Items.Clear()
         Call NamaTamu()
         Call ListBoxMakanan()
     End Sub
@@ -83,7 +82,6 @@ Public Class CheckOut
         ListView1.Columns.Add("Nama Layanan", 60, HorizontalAlignment.Center)
         ListView1.Columns.Add("Jumlah", 60, HorizontalAlignment.Center)
         ListView1.Columns.Add("Total Harga", 80, HorizontalAlignment.Right)
-
         ListView1.View = View.Details
         ListView1.GridLines = True
         ListView1.FullRowSelect = True
@@ -109,10 +107,16 @@ Public Class CheckOut
         Label18.Visible = False
         Label19.Visible = False
         Label20.Visible = False
+        DateTimePicker1.Visible = False
         DateTimePicker2.Visible = False
         Label32.Visible = False
         Label34.Visible = False
         Label35.Visible = False
+        Label28.Visible = False
+        Label29.Visible = False
+        Label30.Visible = False
+        Label31.Visible = False
+        Label33.Visible = False
     End Sub
     Sub TotalPesanan()
         Dim id_tamu, totalharga As Integer
@@ -134,6 +138,7 @@ Public Class CheckOut
 
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        ListView1.Items.Clear()
         TextBox1.Enabled = True
         Button2.Enabled = True
         Call TotalPesanan()
@@ -163,13 +168,11 @@ Public Class CheckOut
         End If
         Label24.Text = Val(Label13.Text) - Val(Label14.Text)
         CMD = New OdbcCommand("SELECT harga_kamar FROM kategori_kamar WHERE tipe_kamar='" & Label9.Text & "'", Conn)
-        Da = New OdbcDataAdapter(CMD)
-        Dt = New DataTable
-        Da.Fill(Dt)
-        Label33.DataBindings.Add("Text", Dt, "harga_kamar")
-
-        Call KondisiAwal()
-        Call NampilkanDataMakanan()
+        Rd = CMD.ExecuteReader
+        Rd.Read()
+        If Rd.HasRows Then
+            Label33.Text = Rd.Item("harga_kamar")
+        End If
         Label28.Text = Format(Now, "dd/MM/yyyy")
         Dim TanggalAwal As DateTime = Label29.Text
         Dim TanggalAkhir As DateTime = Label28.Text
@@ -180,13 +183,9 @@ Public Class CheckOut
             Label35.Visible = True
             Label32.Text = Val(Label30.Text) - Val(Label31.Text)
             Label15.Text = Val(Label33.Text) * Val(Label32.Text)
-        Else
-            Label32.Visible = True
-            Label34.Visible = True
-            Label35.Visible = True
-            Label32.Text = "Tidak lewat"
         End If
         Label17.Text = Val(Label22.Text) + Val(Label15.Text)
+        Call NampilkanDataMakanan()
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -238,5 +237,10 @@ Public Class CheckOut
     Private Sub MenuUtamaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuUtamaToolStripMenuItem.Click
         Me.Close()
         MenuUtama.Show()
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Me.Close()
+        Login.Close()
     End Sub
 End Class

@@ -95,6 +95,7 @@ Partial Class CheckOut
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -324,7 +325,7 @@ Partial Class CheckOut
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(142, 357)
+        Me.Button2.Location = New System.Drawing.Point(287, 41)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 11
@@ -334,7 +335,7 @@ Partial Class CheckOut
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(19, 386)
+        Me.DataGridView1.Location = New System.Drawing.Point(19, 365)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(567, 116)
         Me.DataGridView1.TabIndex = 12
@@ -513,7 +514,7 @@ Partial Class CheckOut
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(270, 111)
+        Me.DataGridView2.Location = New System.Drawing.Point(506, 95)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(16, 11)
         Me.DataGridView2.TabIndex = 17
@@ -628,7 +629,7 @@ Partial Class CheckOut
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(307, 51)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(506, 38)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(23, 20)
         Me.DateTimePicker2.TabIndex = 24
@@ -636,7 +637,7 @@ Partial Class CheckOut
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(378, 51)
+        Me.Label28.Location = New System.Drawing.Point(535, 38)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(45, 13)
         Me.Label28.TabIndex = 25
@@ -645,7 +646,7 @@ Partial Class CheckOut
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(378, 72)
+        Me.Label29.Location = New System.Drawing.Point(535, 64)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(45, 13)
         Me.Label29.TabIndex = 26
@@ -653,7 +654,7 @@ Partial Class CheckOut
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(307, 77)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(506, 64)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(23, 20)
         Me.DateTimePicker1.TabIndex = 27
@@ -661,7 +662,7 @@ Partial Class CheckOut
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(477, 104)
+        Me.Label30.Location = New System.Drawing.Point(535, 93)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(45, 13)
         Me.Label30.TabIndex = 28
@@ -670,7 +671,7 @@ Partial Class CheckOut
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(477, 58)
+        Me.Label31.Location = New System.Drawing.Point(535, 51)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(45, 13)
         Me.Label31.TabIndex = 29
@@ -697,7 +698,7 @@ Partial Class CheckOut
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(351, 112)
+        Me.Label33.Location = New System.Drawing.Point(535, 80)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(45, 13)
         Me.Label33.TabIndex = 30
@@ -712,11 +713,21 @@ Partial Class CheckOut
         Me.Label35.TabIndex = 32
         Me.Label35.Text = "Hari"
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(287, 75)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 31
+        Me.Button3.Text = "Close"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'CheckOut
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(602, 513)
+        Me.ClientSize = New System.Drawing.Size(602, 489)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.Label30)
@@ -828,4 +839,5 @@ Partial Class CheckOut
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class
