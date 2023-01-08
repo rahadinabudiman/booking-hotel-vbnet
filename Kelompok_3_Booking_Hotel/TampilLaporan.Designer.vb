@@ -46,6 +46,7 @@ Partial Class TampilLaporan
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "TampilLaporan"
         Me.Text = "TampilLaporan"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
