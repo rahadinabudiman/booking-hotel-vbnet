@@ -80,6 +80,9 @@ Partial Class CheckOut
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -91,10 +94,7 @@ Partial Class CheckOut
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -580,6 +580,33 @@ Partial Class CheckOut
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Rincian Biaya"
         '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(325, 17)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(26, 13)
+        Me.Label35.TabIndex = 32
+        Me.Label35.Text = "Hari"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(219, 16)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(68, 13)
+        Me.Label34.TabIndex = 31
+        Me.Label34.Text = "Waktu Lebih"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(306, 16)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(13, 13)
+        Me.Label32.TabIndex = 30
+        Me.Label32.Text = "0"
+        '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.Label27)
@@ -677,24 +704,6 @@ Partial Class CheckOut
         Me.Label31.TabIndex = 29
         Me.Label31.Text = "Label31"
         '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(306, 16)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(13, 13)
-        Me.Label32.TabIndex = 30
-        Me.Label32.Text = "0"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(219, 16)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(68, 13)
-        Me.Label34.TabIndex = 31
-        Me.Label34.Text = "Waktu Lebih"
-        '
         'Label33
         '
         Me.Label33.AutoSize = True
@@ -703,15 +712,6 @@ Partial Class CheckOut
         Me.Label33.Size = New System.Drawing.Size(45, 13)
         Me.Label33.TabIndex = 30
         Me.Label33.Text = "Label33"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(325, 17)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(26, 13)
-        Me.Label35.TabIndex = 32
-        Me.Label35.Text = "Hari"
         '
         'Button3
         '

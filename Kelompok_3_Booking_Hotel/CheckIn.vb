@@ -161,13 +161,14 @@ Public Class CheckIn
                     Else
                         Call Koneksi()
                         Dim InputData, GantiStatusKamar, GantiStatusTamu As String
-                        Dim id_tamu, id_kamar, status_pesan, status_kamar, status_tamu, id_login As Integer
+                        Dim id_tamu, id_kamar, status_pesan, status_kamar, status_tamu, id_login, harga_awal, harga_pesanan As Integer
                         id_login = Login.Label7.Text
                         id_tamu = ComboBox1.GetItemText(ComboBox1.SelectedValue)
                         id_kamar = ComboBox3.GetItemText(ComboBox3.SelectedValue)
                         status_pesan = 0
                         status_kamar = 1
                         status_tamu = 1
+                        harga_pesanan = 0
                         Dim TglSaya As String
                         TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
                         Dim nilai As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -180,7 +181,8 @@ Public Class CheckIn
                             hasil = hasil & nilai(strpos)
                             Count = Count + 1
                         End While
-                        InputData = "INSERT INTO pesan_kamar (invoice,tipe_kamar,id_tamu,jumlah_tamu,id_kamar,harga_awal,lama_pesan,jumlah_deposit,tanggal_masuk,jam_masuk,status_pesan,id_login) VALUES ('" & hasil & "','" & ComboBox2.Text & "','" & id_tamu & "', '" & TextBox1.Text & "','" & id_kamar & "', '" & TextBox5.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TglSaya & "','" & Now.ToLongTimeString & "','status_pesan','" & id_login & "')"
+                        harga_awal = Val(TextBox5.Text - TextBox3.Text)
+                        InputData = "INSERT INTO pesan_kamar (invoice,tipe_kamar,id_tamu,jumlah_tamu,id_kamar,harga_awal,harga_pesanan,lama_pesan,jumlah_deposit,tanggal_masuk,jam_masuk,status_pesan,id_login) VALUES ('" & hasil & "','" & ComboBox2.Text & "','" & id_tamu & "', '" & TextBox1.Text & "','" & id_kamar & "', '" & harga_awal & "', '" & harga_pesanan & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TglSaya & "','" & Now.ToLongTimeString & "','status_pesan','" & id_login & "')"
                         GantiStatusKamar = "UPDATE kamar SET status='" & status_kamar & "' WHERE id_kamar='" & id_kamar & "'"
                         GantiStatusTamu = "UPDATE tamu SET status='" & status_tamu & "' WHERE id_tamu='" & id_tamu & "'"
                         CMD = New OdbcCommand(GantiStatusTamu, Conn)

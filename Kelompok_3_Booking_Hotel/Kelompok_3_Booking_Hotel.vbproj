@@ -14,7 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -67,8 +68,13 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Devart.Data, Version=5.0.2938.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="Devart.Data.MySql, Version=9.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.0.31\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
@@ -78,6 +84,8 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -134,6 +142,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Koneksi_Hotel.vb" />
+    <Compile Include="Laporan.Designer.vb">
+      <DependentUpon>Laporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaporanHotel.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanHotel.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Layanan.Designer.vb">
       <DependentUpon>Layanan.vb</DependentUpon>
     </Compile>
@@ -185,6 +205,12 @@
     <Compile Include="TambahAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TampilLaporan.Designer.vb">
+      <DependentUpon>TampilLaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TampilLaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tamu.Designer.vb">
       <DependentUpon>Tamu.vb</DependentUpon>
     </Compile>
@@ -217,6 +243,13 @@
     <EmbeddedResource Include="Kategori_Kamar.resx">
       <DependentUpon>Kategori_Kamar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Laporan.resx">
+      <DependentUpon>Laporan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaporanHotel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanHotel.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layanan.resx">
       <DependentUpon>Layanan.vb</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TambahAdmin.resx">
       <DependentUpon>TambahAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TampilLaporan.resx">
+      <DependentUpon>TampilLaporan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tamu.resx">
       <DependentUpon>Tamu.vb</DependentUpon>
@@ -282,6 +318,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

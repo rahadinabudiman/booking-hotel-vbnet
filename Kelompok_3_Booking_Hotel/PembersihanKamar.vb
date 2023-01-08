@@ -52,6 +52,8 @@ Public Class PembersihanKamar
         Ds = New DataSet
         Da.Fill(Ds, "kamar")
         DataGridView1.DataSource = Ds.Tables("kamar")
+        Call LoadKamarKotor()
+        Call StatusKotorKamar()
     End Sub
     Sub LoadKamarKotor()
         Call Koneksi()

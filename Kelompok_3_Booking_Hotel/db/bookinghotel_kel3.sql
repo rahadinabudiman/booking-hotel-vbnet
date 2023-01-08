@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2023 at 05:37 AM
+-- Generation Time: Jan 08, 2023 at 10:48 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -134,8 +134,25 @@ CREATE TABLE `pesanan` (
   `tanggal_pesan` date NOT NULL,
   `waktu_pesan` time NOT NULL,
   `tanggal_bayar` date NOT NULL,
-  `waktu_bayar` time NOT NULL
+  `waktu_bayar` time NOT NULL,
+  `id_login` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesanan`
+--
+
+INSERT INTO `pesanan` (`id_pesanan`, `id_pesan_kamar`, `id_tamu`, `id_layanan`, `nama_layanan`, `banyak_pesanan`, `total_harga`, `status_pesanan`, `tanggal_pesan`, `waktu_pesan`, `tanggal_bayar`, `waktu_bayar`, `id_login`) VALUES
+(11, 32, 19, 1, 'Pisang Keju', 15, 75000, 1, '2023-01-07', '18:22:41', '2023-01-08', '16:26:02', 0),
+(12, 32, 19, 5, 'Es Jeruk', 2, 20000, 1, '2023-01-07', '18:22:56', '2023-01-08', '16:26:02', 0),
+(13, 32, 19, 3, 'Bantal', 1, 15000, 1, '2023-01-07', '18:23:05', '2023-01-08', '16:26:02', 0),
+(14, 32, 19, 4, 'Selimut', 3, 90000, 1, '2023-01-07', '18:23:10', '2023-01-08', '16:26:02', 0),
+(15, 33, 18, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-07', '18:36:59', '2023-01-08', '16:23:01', 0),
+(16, 36, 21, 1, 'Pisang Keju', 3, 15000, 1, '2023-01-08', '15:56:03', '2023-01-08', '16:01:05', 0),
+(17, 36, 21, 5, 'Es Jeruk', 3, 30000, 1, '2023-01-08', '15:56:14', '2023-01-08', '16:01:05', 0),
+(18, 36, 21, 3, 'Bantal', 3, 45000, 1, '2023-01-08', '15:56:22', '2023-01-08', '16:01:05', 0),
+(19, 34, 20, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-08', '16:21:00', '2023-01-08', '16:21:11', 0),
+(20, 37, 18, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-08', '16:30:14', '2023-01-08', '16:30:21', 0);
 
 -- --------------------------------------------------------
 
@@ -159,8 +176,27 @@ CREATE TABLE `pesan_kamar` (
   `jumlah_deposit` int(11) DEFAULT NULL,
   `denda` int(10) NOT NULL,
   `harga_akhir` int(10) NOT NULL,
-  `status_pesan` int(1) DEFAULT NULL
+  `harga_pesanan` int(20) NOT NULL,
+  `status_pesan` int(1) DEFAULT NULL,
+  `id_login` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesan_kamar`
+--
+
+INSERT INTO `pesan_kamar` (`id_pesan_kamar`, `invoice`, `id_tamu`, `jumlah_tamu`, `id_kamar`, `tipe_kamar`, `harga_awal`, `tanggal_masuk`, `jam_masuk`, `lama_pesan`, `tanggal_keluar`, `jam_keluar`, `jumlah_deposit`, `denda`, `harga_akhir`, `harga_pesanan`, `status_pesan`, `id_login`) VALUES
+(26, 'UydaJ', 18, 1, 4, 'GEGE', 250000, '2023-01-07', '12:53:25', 2, '2022-12-29', '12:55:34', 0, 0, 0, 0, 1, 1),
+(27, 'tg9lJ', 19, 3, 5, 'PERFECTOR', 150500, '2023-01-07', '12:55:16', 5, '2022-12-29', '12:56:23', 0, 0, 0, 0, 1, 1),
+(28, 'Xalq1', 18, 10, 6, 'PERFECTOR', 150500, '2023-01-07', '12:59:22', 5, '2022-12-29', '12:59:37', 0, 0, 0, 0, 1, 2),
+(31, 'nsHFu', 18, 3, 6, 'PERFECTOR', 150200, '2023-01-07', '13:24:40', 2, '2022-12-29', '17:44:59', 0, 0, 0, 0, 1, 1),
+(32, 'v9HF2', 19, 3, 5, 'PERFECTOR', 150500, '2022-12-31', '13:40:08', 5, '2023-01-08', '16:26:02', 0, 300, 200300, 200000, 1, 1),
+(33, 'm36Fu', 18, 1, 3, 'DEBES', 154000, '2023-01-07', '18:30:50', 2, '2023-01-08', '16:23:01', 0, 0, 5000, 5000, 1, 1),
+(34, 'hbsHE', 20, 1, 4, 'GEGE', 200000, '2023-01-07', '21:40:00', 1, '2023-01-08', '16:21:11', 0, 0, 5000, 5000, 1, 1),
+(35, '3Y58d', 21, 2, 2, 'GEGE', 100000, '2023-01-08', '15:48:16', 2, '2023-01-08', '15:54:01', 0, 0, 0, 0, 1, 1),
+(36, 'RZCUs', 21, 3, 6, 'PERFECTOR', 200, '2023-01-01', '15:55:29', 2, '2023-01-08', '16:01:05', 0, 500, 90500, 90000, 1, 1),
+(37, 'ehlsM', 18, 3, 5, 'PERFECTOR', 100, '2023-01-08', '16:30:07', 1, '2023-01-08', '16:30:21', 0, 0, 5100, 5000, 1, 1),
+(38, 'Ee9iu', 18, 1, 3, 'DEBES', 4000, '2023-01-08', '16:37:55', 2, '2023-01-08', '16:38:03', 0, 0, 4000, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -189,7 +225,10 @@ CREATE TABLE `tamu` (
 --
 
 INSERT INTO `tamu` (`id_tamu`, `nama_depan_tamu`, `nama_belakang_tamu`, `panggilan_tamu`, `identitas_tamu`, `nomor_identitas`, `warga_negara`, `alamat_tinggal`, `kota`, `provinsi`, `nomor_hp`, `email`, `status`) VALUES
-(13, 'RAHADINA', 'BUDIMAN', 'Mr.', 'KTP', '2020', 'WNI', '1212', '1212', '1212', '8023', '0823', 0);
+(18, 'RAHA', 'RAHA', 'Mr.', 'KTP', '213212', 'WNI', 'RAHA', 'RAHA', 'RAHA', 'RAHA', 'RAHA', 0),
+(19, '2', '2', 'Mr.', 'KTP', '213211', 'WNI', '2', '2', '2', '2', '2', 0),
+(20, 'RAHA RAHA', 'RAHA', 'Mr.', 'KTP', '3232', 'WNI', '23', '23', '23', 'TAHA', 'RAHA', 0),
+(21, 'KEOTONGAN', 'OTONG BESAR', 'Mr.', 'KTP', '23124555', 'WNI', '23', '23', '23', '12', '23', 0);
 
 --
 -- Indexes for dumped tables
@@ -269,19 +308,19 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `pesan_kamar`
 --
 ALTER TABLE `pesan_kamar`
-  MODIFY `id_pesan_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_pesan_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tamu`
 --
 ALTER TABLE `tamu`
-  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

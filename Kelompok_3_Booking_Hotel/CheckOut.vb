@@ -177,7 +177,7 @@ Public Class CheckOut
         Else
             MsgBox("Data Tidak Ada")
         End If
-        Label24.Text = Val(Label13.Text) - Val(Label14.Text)
+        Label24.Text = Val(Label13.Text)
         CMD = New OdbcCommand("SELECT harga_kamar FROM kategori_kamar WHERE tipe_kamar='" & Label9.Text & "'", Conn)
         Rd = CMD.ExecuteReader
         Rd.Read()
@@ -208,14 +208,16 @@ Public Class CheckOut
             MsgBox("Harap bayar dengan jumlah yang sudah ditentukan")
         Else
             Call Koneksi()
-            Dim InputData, CheckData, TglSaya, ganti_status_kamar, ganti_status_tamu, ganti_Status_pesanan As String
-            Dim status_pesan, jumlah_deposit, status_tamu, id_login As Integer
+            Dim InputData, TglSaya, ganti_status_kamar, ganti_status_tamu, ganti_Status_pesanan As String
+            Dim status_pesan, jumlah_deposit, status_tamu, id_login, harga_pesanan, harga_akhir As Integer
             id_login = Login.Label7.Text
             status_pesan = 1
             jumlah_deposit = 0
             status_tamu = 0
+            harga_pesanan = Label22.Text
+            harga_akhir = Val(Label24.Text) + Val(Label17.Text)
             TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
-            InputData = "UPDATE pesan_kamar SET id_login ='" & id_login & "', tanggal_keluar='" & TglSaya & "', jam_keluar='" & Now.ToLongTimeString & "', denda='" & Label15.Text & "', harga_akhir='" & Label17.Text & "' , status_pesan='" & status_pesan & "' , jumlah_deposit='" & jumlah_deposit & "', denda='" & Label15.Text & "' , harga_akhir='" & Label17.Text & "' WHERE id_pesan_kamar = '" & Label18.Text & "'"
+            InputData = "UPDATE pesan_kamar SET id_login ='" & id_login & "', tanggal_keluar='" & TglSaya & "', jam_keluar='" & Now.ToLongTimeString & "', denda='" & Label15.Text & "', harga_pesanan='" & harga_pesanan & "', harga_akhir='" & harga_akhir & "' , status_pesan='" & status_pesan & "' , jumlah_deposit='" & jumlah_deposit & "' WHERE id_pesan_kamar = '" & Label18.Text & "'"
             ganti_status_kamar = "UPDATE kamar SET status=2 WHERE id_kamar ='" & Label19.Text & "'"
             ganti_status_tamu = "UPDATE tamu SET status=0 WHERE id_tamu ='" & Label20.Text & "'"
             ganti_Status_pesanan = "UPDATE pesanan SET status_pesanan='1', tanggal_bayar ='" & TglSaya & "', waktu_bayar ='" & Now.ToLongTimeString & "' WHERE id_pesan_kamar = '" & Label18.Text & "' AND id_tamu ='" & Label20.Text & "'"

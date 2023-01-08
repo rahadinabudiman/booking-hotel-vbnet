@@ -127,6 +127,7 @@ Public Class MenuUtama
         Label7.Visible = False
         Call StatusKotorKamar()
         Label2.Text = Login.Label5.Text
+        Call KamarKosong()
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
@@ -154,9 +155,26 @@ Public Class MenuUtama
             Label12.Text = "Tidak Ada Kamar Kotor (Checkout)"
         End If
     End Sub
+    Sub KamarKosong()
+        Call Koneksi()
+        CMD = New OdbcCommand("SELECT * FROM kamar WHERE status = 0", Conn)
+        Da = New OdbcDataAdapter(CMD)
+        Dt = New DataTable
+        Da.Fill(Dt)
+        If Dt.Rows.Count > 0 Then
+            Label15.Text = "Tersedia Kamar Kosong"
+        Else
+            Label15.Text = "Tidak Ada Kamar Kosong (Full)"
+        End If
+    End Sub
 
     Private Sub DrinkToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DrinkToolStripMenuItem.Click
         Me.Close()
         Drink.Show()
+    End Sub
+
+    Private Sub LaporanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaporanToolStripMenuItem.Click
+        Laporan.Show()
+        Me.Close()
     End Sub
 End Class
