@@ -122,7 +122,7 @@ Public Class Drink
         Dim StatusPesanan As Integer
         StatusPesanan = 0
         TglSaya = Format(DateTimePicker1.Value, "yyyy-MM-dd")
-        TambahPesanan = "INSERT INTO pesanan (id_pesan_kamar,id_tamu,id_layanan,nama_layanan,banyak_pesanan,total_harga,status_pesanan,tanggal_pesan,waktu_pesan) VALUES ('" & Label8.Text & "','" & Label10.Text & "', '" & Label9.Text & "', '" & ComboBox2.Text & "', '" & TextBox1.Text & "', '" & Label7.Text & "', '" & StatusPesanan & "', '" & TglSaya & "', '" & Now.ToLongTimeString & "')"
+        TambahPesanan = "INSERT INTO pesanan (id_pesan_kamar,id_tamu,id_layanan,nama_layanan,banyak_pesanan,total_harga,status_pesanan,tanggal_pesan,waktu_pesan, id_login) VALUES ('" & Label8.Text & "','" & Label10.Text & "', '" & Label9.Text & "', '" & ComboBox2.Text & "', '" & TextBox1.Text & "', '" & Label7.Text & "', '" & StatusPesanan & "', '" & TglSaya & "', '" & Now.ToLongTimeString & "', '" & Login.Label7.Text & "')"
         CMD = New OdbcCommand(TambahPesanan, Conn)
         CMD.ExecuteNonQuery()
         MsgBox("Pesanan ditambahkan")

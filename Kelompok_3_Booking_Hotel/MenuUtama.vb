@@ -177,4 +177,22 @@ Public Class MenuUtama
         Laporan.Show()
         Me.Close()
     End Sub
+
+    Private Sub Label9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label9.Click
+
+    End Sub
+
+    Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub LaundryToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaundryToolStripMenuItem.Click
+        Me.Close()
+        Laundry.Show()
+    End Sub
+
+    Private Sub CetakStrukToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CetakStrukToolStripMenuItem.Click
+        CetakStruk.Show()
+        Me.Close()
+    End Sub
 End Class

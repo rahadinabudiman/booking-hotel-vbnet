@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2023 at 10:48 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Jan 11, 2023 at 09:27 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,21 +30,24 @@ SET time_zone = "+00:00";
 CREATE TABLE `kamar` (
   `id_kamar` int(11) NOT NULL,
   `nomor_kamar` int(5) DEFAULT NULL,
+  `id_kategori_kamar` int(11) NOT NULL,
   `tipe_kamar` varchar(10) DEFAULT NULL,
   `kapasitas` varchar(5) DEFAULT NULL,
   `status` int(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kamar`
 --
 
-INSERT INTO `kamar` (`id_kamar`, `nomor_kamar`, `tipe_kamar`, `kapasitas`, `status`) VALUES
-(2, 123, 'GEGE', '20', 0),
-(3, 2001, 'DEBES', '1', 0),
-(4, 101, 'GEGE', '1', 0),
-(5, 1002, 'PERFECTOR', '3', 0),
-(6, 2121, 'PERFECTOR', '10', 0);
+INSERT INTO `kamar` (`id_kamar`, `nomor_kamar`, `id_kategori_kamar`, `tipe_kamar`, `kapasitas`, `status`) VALUES
+(2, 123, 4, 'GEGE', '20', 0),
+(3, 2001, 3, 'DEBES', '1', 0),
+(4, 101, 4, 'GEGE', '1', 0),
+(5, 1002, 2, 'PERFECTOR', '3', 0),
+(6, 2121, 2, 'PERFECTOR', '10', 0),
+(7, 122, 4, 'GEGE', '30', 0),
+(9, 69, 4, 'GEGE', '30', 2);
 
 -- --------------------------------------------------------
 
@@ -57,7 +60,7 @@ CREATE TABLE `kategori_kamar` (
   `tipe_kamar` varchar(10) DEFAULT NULL,
   `kapasitas` int(5) NOT NULL,
   `harga_kamar` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kategori_kamar`
@@ -79,7 +82,7 @@ CREATE TABLE `layanan` (
   `nama_layanan` varchar(25) DEFAULT NULL,
   `kategori` varchar(10) DEFAULT NULL,
   `harga` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `layanan`
@@ -91,7 +94,8 @@ INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `kategori`, `harga`) VALUES
 (3, 'Bantal', 'Room', 15000),
 (4, 'Selimut', 'Room', 30000),
 (5, 'Es Jeruk', 'Minuman', 10000),
-(6, 'Lemon Tea', 'Minuman', 15000);
+(6, 'Lemon Tea', 'Minuman', 15000),
+(7, 'Nasi Goreng', 'Makanan', 16000);
 
 -- --------------------------------------------------------
 
@@ -105,7 +109,7 @@ CREATE TABLE `login` (
   `password` varchar(25) DEFAULT NULL,
   `nama_admin` varchar(25) NOT NULL,
   `tipe_administrator` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `login`
@@ -114,7 +118,8 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id_login`, `username`, `password`, `nama_admin`, `tipe_administrator`) VALUES
 (1, 'admin', 'admin', 'R4HA', 'Super Administrator'),
 (2, 'r4ha', 'r4ha', 'Keyze', 'Super Administrator'),
-(4, 'k', 'k', 'k', 'Super Administrator');
+(4, 'k', 'k', 'k', 'Super Administrator'),
+(5, 'ujank', '1234', 'ujank', 'Resepsionis');
 
 -- --------------------------------------------------------
 
@@ -135,24 +140,32 @@ CREATE TABLE `pesanan` (
   `waktu_pesan` time NOT NULL,
   `tanggal_bayar` date NOT NULL,
   `waktu_bayar` time NOT NULL,
-  `id_login` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_login` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pesanan`
 --
 
 INSERT INTO `pesanan` (`id_pesanan`, `id_pesan_kamar`, `id_tamu`, `id_layanan`, `nama_layanan`, `banyak_pesanan`, `total_harga`, `status_pesanan`, `tanggal_pesan`, `waktu_pesan`, `tanggal_bayar`, `waktu_bayar`, `id_login`) VALUES
-(11, 32, 19, 1, 'Pisang Keju', 15, 75000, 1, '2023-01-07', '18:22:41', '2023-01-08', '16:26:02', 0),
-(12, 32, 19, 5, 'Es Jeruk', 2, 20000, 1, '2023-01-07', '18:22:56', '2023-01-08', '16:26:02', 0),
-(13, 32, 19, 3, 'Bantal', 1, 15000, 1, '2023-01-07', '18:23:05', '2023-01-08', '16:26:02', 0),
-(14, 32, 19, 4, 'Selimut', 3, 90000, 1, '2023-01-07', '18:23:10', '2023-01-08', '16:26:02', 0),
-(15, 33, 18, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-07', '18:36:59', '2023-01-08', '16:23:01', 0),
-(16, 36, 21, 1, 'Pisang Keju', 3, 15000, 1, '2023-01-08', '15:56:03', '2023-01-08', '16:01:05', 0),
-(17, 36, 21, 5, 'Es Jeruk', 3, 30000, 1, '2023-01-08', '15:56:14', '2023-01-08', '16:01:05', 0),
-(18, 36, 21, 3, 'Bantal', 3, 45000, 1, '2023-01-08', '15:56:22', '2023-01-08', '16:01:05', 0),
-(19, 34, 20, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-08', '16:21:00', '2023-01-08', '16:21:11', 0),
-(20, 37, 18, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-08', '16:30:14', '2023-01-08', '16:30:21', 0);
+(11, 32, 19, 1, 'Pisang Keju', 15, 75000, 1, '2023-01-07', '18:22:41', '2023-01-08', '16:26:02', 1),
+(12, 32, 19, 5, 'Es Jeruk', 2, 20000, 1, '2023-01-07', '18:22:56', '2023-01-08', '16:26:02', 1),
+(13, 32, 19, 3, 'Bantal', 1, 15000, 1, '2023-01-07', '18:23:05', '2023-01-08', '16:26:02', 1),
+(14, 32, 19, 4, 'Selimut', 3, 90000, 1, '2023-01-07', '18:23:10', '2023-01-08', '16:26:02', 1),
+(15, 33, 18, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-07', '18:36:59', '2023-01-08', '16:23:01', 1),
+(16, 36, 21, 1, 'Pisang Keju', 3, 15000, 1, '2023-01-08', '15:56:03', '2023-01-08', '16:01:05', 1),
+(17, 36, 21, 5, 'Es Jeruk', 3, 30000, 1, '2023-01-08', '15:56:14', '2023-01-08', '16:01:05', 1),
+(18, 36, 21, 3, 'Bantal', 3, 45000, 1, '2023-01-08', '15:56:22', '2023-01-08', '16:01:05', 1),
+(19, 34, 20, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-08', '16:21:00', '2023-01-08', '16:21:11', 1),
+(20, 37, 18, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-08', '16:30:14', '2023-01-08', '16:30:21', 1),
+(21, 39, 22, 7, 'Nasi Goreng', 1, 16000, 1, '2023-01-09', '15:49:37', '2023-01-09', '15:53:41', 1),
+(22, 39, 22, 5, 'Es Jeruk', 1, 10000, 1, '2023-01-09', '15:51:30', '2023-01-09', '15:53:41', 1),
+(23, 39, 22, 4, 'Selimut', 1, 30000, 1, '2023-01-09', '15:52:08', '2023-01-09', '15:53:41', 1),
+(24, 40, 22, 1, 'Pisang Keju', 1, 5000, 1, '2023-01-11', '12:54:58', '2023-01-11', '13:18:21', 1),
+(25, 40, 22, 3, 'Bantal', 2, 30000, 1, '2023-01-11', '13:05:23', '2023-01-11', '13:18:21', 1),
+(26, 40, 22, 3, 'Bantal', 1, 15000, 1, '2023-01-11', '13:06:29', '2023-01-11', '13:18:21', 1),
+(27, 40, 22, 3, 'Bantal', 4, 60000, 1, '2023-01-11', '13:06:39', '2023-01-11', '13:18:21', 1),
+(28, 40, 22, 2, 'Martabak', 3, 45000, 1, '2023-01-11', '13:11:45', '2023-01-11', '13:18:21', 1);
 
 -- --------------------------------------------------------
 
@@ -179,7 +192,7 @@ CREATE TABLE `pesan_kamar` (
   `harga_pesanan` int(20) NOT NULL,
   `status_pesan` int(1) DEFAULT NULL,
   `id_login` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pesan_kamar`
@@ -196,7 +209,9 @@ INSERT INTO `pesan_kamar` (`id_pesan_kamar`, `invoice`, `id_tamu`, `jumlah_tamu`
 (35, '3Y58d', 21, 2, 2, 'GEGE', 100000, '2023-01-08', '15:48:16', 2, '2023-01-08', '15:54:01', 0, 0, 0, 0, 1, 1),
 (36, 'RZCUs', 21, 3, 6, 'PERFECTOR', 200, '2023-01-01', '15:55:29', 2, '2023-01-08', '16:01:05', 0, 500, 90500, 90000, 1, 1),
 (37, 'ehlsM', 18, 3, 5, 'PERFECTOR', 100, '2023-01-08', '16:30:07', 1, '2023-01-08', '16:30:21', 0, 0, 5100, 5000, 1, 1),
-(38, 'Ee9iu', 18, 1, 3, 'DEBES', 4000, '2023-01-08', '16:37:55', 2, '2023-01-08', '16:38:03', 0, 0, 4000, 0, 1, 1);
+(38, 'Ee9iu', 18, 1, 3, 'DEBES', 4000, '2023-01-08', '16:37:55', 2, '2023-01-08', '16:38:03', 0, 0, 4000, 0, 1, 1),
+(39, 'I2JE8', 22, 10, 6, 'PERFECTOR', 300, '2023-01-09', '15:46:12', 3, '2023-01-09', '15:53:41', 0, 0, 56300, 56000, 1, 1),
+(40, 'VlUTA', 22, 1, 9, 'GEGE', 50000, '2023-01-11', '12:54:36', 1, '2023-01-11', '13:18:21', 0, 0, 95000, 45000, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -218,7 +233,7 @@ CREATE TABLE `tamu` (
   `nomor_hp` varchar(15) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tamu`
@@ -228,7 +243,8 @@ INSERT INTO `tamu` (`id_tamu`, `nama_depan_tamu`, `nama_belakang_tamu`, `panggil
 (18, 'RAHA', 'RAHA', 'Mr.', 'KTP', '213212', 'WNI', 'RAHA', 'RAHA', 'RAHA', 'RAHA', 'RAHA', 0),
 (19, '2', '2', 'Mr.', 'KTP', '213211', 'WNI', '2', '2', '2', '2', '2', 0),
 (20, 'RAHA RAHA', 'RAHA', 'Mr.', 'KTP', '3232', 'WNI', '23', '23', '23', 'TAHA', 'RAHA', 0),
-(21, 'KEOTONGAN', 'OTONG BESAR', 'Mr.', 'KTP', '23124555', 'WNI', '23', '23', '23', '12', '23', 0);
+(21, 'KEOTONGAN', 'OTONG BESAR', 'Mr.', 'KTP', '23124555', 'WNI', '23', '23', '23', '12', '23', 0),
+(22, 'Ujang', 'Jebred', 'Mr.', 'KTP', '00980', 'WNA', 'Jl.Padasuka', 'Bandung', 'Jawa Barat', '085156912276', 'lparlindungan3@gmail.com', 0);
 
 --
 -- Indexes for dumped tables
@@ -238,7 +254,9 @@ INSERT INTO `tamu` (`id_tamu`, `nama_depan_tamu`, `nama_belakang_tamu`, `panggil
 -- Indexes for table `kamar`
 --
 ALTER TABLE `kamar`
-  ADD PRIMARY KEY (`id_kamar`);
+  ADD PRIMARY KEY (`id_kamar`),
+  ADD KEY `id_kategori_kamar` (`id_kategori_kamar`),
+  ADD KEY `id_kategori_kamar_2` (`id_kategori_kamar`);
 
 --
 -- Indexes for table `kategori_kamar`
@@ -262,13 +280,20 @@ ALTER TABLE `login`
 -- Indexes for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  ADD PRIMARY KEY (`id_pesanan`);
+  ADD PRIMARY KEY (`id_pesanan`),
+  ADD KEY `id_layanan` (`id_layanan`),
+  ADD KEY `id_tamu` (`id_tamu`),
+  ADD KEY `id_pesan_kamar` (`id_pesan_kamar`),
+  ADD KEY `id_login` (`id_login`);
 
 --
 -- Indexes for table `pesan_kamar`
 --
 ALTER TABLE `pesan_kamar`
-  ADD PRIMARY KEY (`id_pesan_kamar`);
+  ADD PRIMARY KEY (`id_pesan_kamar`),
+  ADD KEY `id_tamu` (`id_tamu`),
+  ADD KEY `id_kamar` (`id_kamar`),
+  ADD KEY `id_login` (`id_login`);
 
 --
 -- Indexes for table `tamu`
@@ -284,7 +309,7 @@ ALTER TABLE `tamu`
 -- AUTO_INCREMENT for table `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `kategori_kamar`
@@ -296,31 +321,58 @@ ALTER TABLE `kategori_kamar`
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `pesan_kamar`
 --
 ALTER TABLE `pesan_kamar`
-  MODIFY `id_pesan_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_pesan_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tamu`
 --
 ALTER TABLE `tamu`
-  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `kamar`
+--
+ALTER TABLE `kamar`
+  ADD CONSTRAINT `kamar_ibfk_1` FOREIGN KEY (`id_kategori_kamar`) REFERENCES `kategori_kamar` (`id_kategori_kamar`);
+
+--
+-- Constraints for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`id_layanan`) REFERENCES `layanan` (`id_layanan`),
+  ADD CONSTRAINT `pesanan_ibfk_2` FOREIGN KEY (`id_tamu`) REFERENCES `tamu` (`id_tamu`),
+  ADD CONSTRAINT `pesanan_ibfk_3` FOREIGN KEY (`id_pesan_kamar`) REFERENCES `pesan_kamar` (`id_pesan_kamar`),
+  ADD CONSTRAINT `pesanan_ibfk_4` FOREIGN KEY (`id_login`) REFERENCES `login` (`id_login`);
+
+--
+-- Constraints for table `pesan_kamar`
+--
+ALTER TABLE `pesan_kamar`
+  ADD CONSTRAINT `pesan_kamar_ibfk_1` FOREIGN KEY (`id_tamu`) REFERENCES `tamu` (`id_tamu`),
+  ADD CONSTRAINT `pesan_kamar_ibfk_2` FOREIGN KEY (`id_kamar`) REFERENCES `kamar` (`id_kamar`),
+  ADD CONSTRAINT `pesan_kamar_ibfk_3` FOREIGN KEY (`id_login`) REFERENCES `login` (`id_login`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

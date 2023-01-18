@@ -87,7 +87,7 @@ Public Class Kamar
                     Status = 0
                     Call Koneksi()
                     Dim InputData As String
-                    InputData = "INSERT INTO kamar (nomor_kamar,tipe_kamar,kapasitas,status) VALUES ('" & TextBox1.Text & "', '" & ComboBox1.Text & "', '" & TextBox3.Text & "','status')"
+                    InputData = "INSERT INTO kamar (nomor_kamar,tipe_kamar,kapasitas,id_kategori_kamar,status) VALUES ('" & TextBox1.Text & "', '" & ComboBox1.Text & "', '" & TextBox3.Text & "','" & Label6.Text & "','status')"
                     CMD = New OdbcCommand(InputData, Conn)
                     CMD.ExecuteNonQuery()
                     MsgBox("Berhasil input Data")
@@ -164,15 +164,14 @@ Public Class Kamar
     End Sub
     Sub Tipe_Kamar()
         Call Koneksi()
-        CMD = New OdbcCommand("SELECT tipe_kamar,harga_kamar, kapasitas FROM kategori_kamar", Conn)
+        CMD = New OdbcCommand("SELECT tipe_kamar,id_kategori_kamar, kapasitas FROM kategori_kamar", Conn)
         Da = New OdbcDataAdapter(CMD)
         Dt = New DataTable
         Da.Fill(Dt)
         ComboBox1.DataSource = Dt
         ComboBox1.DisplayMember = "tipe_kamar"
-        ComboBox1.ValueMember = "harga_kamar"
+        ComboBox1.ValueMember = "id_kategori_kamar"
         ComboBox1.Text = "Pilih Tipe Kamar"
-        Label6.Text = "0"
         TextBox3.DataBindings.Add("Text", Dt, "kapasitas")
     End Sub
 

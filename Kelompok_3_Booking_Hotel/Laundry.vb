@@ -1,5 +1,5 @@
 ﻿Imports System.Data.Odbc
-Public Class Food
+Public Class Laundry
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
         MsgBox("Logout Berhasil")
         Me.Close()
@@ -83,14 +83,14 @@ Public Class Food
         TextBox1.Enabled = False
     End Sub
     Sub NamaMakanan()
-        CMD = New OdbcCommand("SELECT * from layanan WHERE kategori='Makanan'", Conn)
+        CMD = New OdbcCommand("SELECT * from layanan WHERE kategori='Jasa'", Conn)
         Da = New OdbcDataAdapter(CMD)
         Dt = New DataTable
         Da.Fill(Dt)
         ComboBox2.DataSource = Dt
         ComboBox2.DisplayMember = "nama_layanan"
         ComboBox2.ValueMember = "id_layanan"
-        ComboBox2.Text = "Pilih Makanan"
+        ComboBox2.Text = "Pilih Jasa"
     End Sub
     Private Sub Food_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call KondisiAwal()
@@ -107,6 +107,11 @@ Public Class Food
         Rd.Read()
         If Rd.HasRows Then
             Label6.Text = Rd.Item("harga")
+        End If
+        If ComboBox2.Text = "Laundry Baju" Then
+            Label11.Text = "/kg"
+        Else
+            Label11.Text = "/Item"
         End If
     End Sub
 

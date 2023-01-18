@@ -105,6 +105,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CetakStruk.Designer.vb">
+      <DependentUpon>CetakStruk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CetakStruk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CheckIn.Designer.vb">
       <DependentUpon>CheckIn.vb</DependentUpon>
     </Compile>
@@ -159,6 +165,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LaporanHotel.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laundry.Designer.vb">
+      <DependentUpon>Laundry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laundry.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Layanan.Designer.vb">
       <DependentUpon>Layanan.vb</DependentUpon>
@@ -217,6 +229,18 @@
     <Compile Include="TampilLaporan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TampilStruk.Designer.vb">
+      <DependentUpon>TampilStruk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TampilStruk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tampil_Struk.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tampil_Struk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Tamu.Designer.vb">
       <DependentUpon>Tamu.vb</DependentUpon>
     </Compile>
@@ -231,6 +255,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CetakStruk.resx">
+      <DependentUpon>CetakStruk.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +287,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LaporanHotel.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Laundry.resx">
+      <DependentUpon>Laundry.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layanan.resx">
       <DependentUpon>Layanan.vb</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +316,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TampilLaporan.resx">
       <DependentUpon>TampilLaporan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TampilStruk.resx">
+      <DependentUpon>TampilStruk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tampil_Struk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Tampil_Struk.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Tamu.resx">
       <DependentUpon>Tamu.vb</DependentUpon>

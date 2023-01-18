@@ -70,6 +70,7 @@ Partial Class MenuUtama
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.CetakStrukToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -80,7 +81,7 @@ Partial Class MenuUtama
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AdministrasiHotelToolStripMenuItem, Me.RoomServicesToolStripMenuItem, Me.ProsesHotelToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AdministrasiHotelToolStripMenuItem, Me.RoomServicesToolStripMenuItem, Me.ProsesHotelToolStripMenuItem, Me.CetakStrukToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(738, 24)
@@ -427,6 +428,12 @@ Partial Class MenuUtama
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "Label15"
         '
+        'CetakStrukToolStripMenuItem
+        '
+        Me.CetakStrukToolStripMenuItem.Name = "CetakStrukToolStripMenuItem"
+        Me.CetakStrukToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
+        Me.CetakStrukToolStripMenuItem.Text = "Cetak Struk"
+        '
         'MenuUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -510,4 +517,5 @@ Partial Class MenuUtama
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents CetakStrukToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

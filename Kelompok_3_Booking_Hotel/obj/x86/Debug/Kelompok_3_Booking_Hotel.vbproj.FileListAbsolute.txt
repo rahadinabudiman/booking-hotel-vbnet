@@ -45,3 +45,38 @@ C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Drink.resources
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Laporan.resources
 C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TampilLaporan.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.exe.config
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.exe
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.xml
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.pdb
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.exe
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.pdb
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\bin\Debug\Kelompok_3_Booking_Hotel.xml
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.vbprojResolveAssemblyReference.cache
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CheckIn.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CheckOut.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Drink.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Food.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Kamar.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Kategori_Kamar.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Laporan.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Layanan.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Login.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.MenuUtama.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Resources.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.PembersihanKamar.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.RoomServices.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TambahAdmin.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TampilLaporan.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Tamu.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TamuInHouse.resources
+F:\booking-hotel-vbnet-main\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.vbproj.GenerateResource.Cache
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Drink.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Laporan.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.RoomServices.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TambahAdmin.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TampilLaporan.resources
+D:\Raha\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Laundry.resources
+C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.Laundry.resources
+C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.CetakStruk.resources
+C:\Users\erbee\onedrive\documents\visual studio 2010\Projects\Kelompok_3_Booking_Hotel\Kelompok_3_Booking_Hotel\obj\x86\Debug\Kelompok_3_Booking_Hotel.TampilStruk.resources

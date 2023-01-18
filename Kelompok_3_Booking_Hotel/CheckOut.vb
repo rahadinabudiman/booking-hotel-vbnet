@@ -14,6 +14,7 @@ Public Class CheckOut
         Label22.Text = 0
         Label27.Text = 0
         TextBox1.Enabled = False
+        TextBox1.Text = 0
     End Sub
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
         MsgBox("Logout Berhasil")
@@ -204,7 +205,7 @@ Public Class CheckOut
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        If TextBox1.Text < Label17.Text Then
+        If Val(Label27.Text) < 0 Then
             MsgBox("Harap bayar dengan jumlah yang sudah ditentukan")
         Else
             Call Koneksi()
